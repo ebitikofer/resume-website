@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Introduction from '@/components/Introduction'
-import Coding from '@/components/Coding'
-import Qualifications from '@/components/Qualifications'
-import Demos from '@/components/Demos'
-import About from '@/components/About'
+import Introduction from '@/components/templates/Introduction'
+import Coding from '@/components/templates/Coding'
+import Qualifications from '@/components/templates/Qualifications'
+import Demos from '@/components/templates/Demos'
+import About from '@/components/templates/About'
 
 Vue.use(Router)
 

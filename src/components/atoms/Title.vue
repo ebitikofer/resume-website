@@ -1,21 +1,19 @@
 <template>
-  <div class="link">
-    <a :href="lnk" target="_blank">{{ nm }}</a>
+  <div class="title">
+    <h2>{{ ttl }}</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Link',
+  name: 'Title',
   props: {
-    name: String,
-    link: String,
+    title: String,
     delay: Number
   },
   data () {
     return {
-      nm: this.name,
-      lnk: this.link,
+      ttl: this.title,
       dly: this.delay
     }
   },
@@ -36,7 +34,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-a {
-  color: #42b983;
+h1, h2 {
+  font-weight: normal;
 }
 </style>

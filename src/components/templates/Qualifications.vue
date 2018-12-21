@@ -1,18 +1,11 @@
 <template>
   <div class="qualifications">
 
-    <Navbar :message="msg"
-      name1="Introduction" link1="/"
-      name2="Coding" link2="/coding"
-      name3="Demos" link3="/demos"
-      name4="About" link4="/about"
-    />
-
-    <br/>
+    <Navbar :message="msg" :routes="nvs" :delay = "0" /><br/>
 
     <h2 v-anime="{ translateY: 5, opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 400, loop: false }">Education</h2>
     <ul v-anime="{ translateY: 5, opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 550, loop: false }">
-      <li v-anime="{translateY: 5, opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 600, loop: false }"><Link name="Bachelors of Computer Science" link="https://catalogs.ohio.edu/preview_program.php?catoid=19&poid=4304&returnto=967" /></li><br/>
+      <li v-anime="{translateY: 5, opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 600, loop: false }"><Link name="Bachelors of Computer Science" link="https://catalogs.ohio.edu/preview_program.php?catoid=19&poid=4304&returnto=967" /></li><br/><br/>
       <li v-anime="{translateY: 5, opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 650, loop: false }">
         <h3>Ohio University</h3>
       </li>
@@ -43,8 +36,8 @@
 </template>
 
 <script>
-import Navbar from './molecules/Navbar'
-import Link from './atoms/Link'
+import Navbar from '../molecules/Navbar'
+import Link from '../atoms/Link'
 
 export default {
   name: 'Qualifications',
@@ -54,7 +47,13 @@ export default {
   },
   data () {
     return {
-      msg: 'Qualifications'
+      msg: 'Qualifications',
+      nvs: [
+        { name: 'Introduction', link: '/' },
+        { name: 'Coding', link: '/coding' },
+        { name: 'Demos', link: '/demos' },
+        { name: 'About', link: '/about' }
+      ]
     }
   }
 }

@@ -1,21 +1,31 @@
 <template>
-  <div class="link">
-    <a :href="lnk" target="_blank">{{ nm }}</a>
+  <div class="textsection">
+
+    <Title :title="hdr" :delay="this.delay" />
+    <Textblock :text="txt" :delay="this.delay + 50" />
+
   </div>
 </template>
 
 <script>
+import Title from '../atoms/Title'
+import Textblock from '../atoms/Textblock'
+
 export default {
-  name: 'Link',
+  name: 'Textsection',
+  components: {
+    Title,
+    Textblock
+  },
   props: {
-    name: String,
-    link: String,
+    header: String,
+    text: String,
     delay: Number
   },
   data () {
     return {
-      nm: this.name,
-      lnk: this.link,
+      hdr: this.header,
+      txt: this.text,
       dly: this.delay
     }
   },
@@ -34,9 +44,5 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-a {
-  color: #42b983;
-}
 </style>

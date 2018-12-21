@@ -1,21 +1,19 @@
 <template>
-  <div class="link">
-    <a :href="lnk" target="_blank">{{ nm }}</a>
+  <div class="textblock">
+    <p>{{ txt }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Link',
+  name: 'Textblock',
   props: {
-    name: String,
-    link: String,
+    text: String,
     delay: Number
   },
   data () {
     return {
-      nm: this.name,
-      lnk: this.link,
+      txt: this.text,
       dly: this.delay
     }
   },
@@ -36,7 +34,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-a {
+p {
   color: #42b983;
 }
 </style>

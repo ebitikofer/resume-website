@@ -1,36 +1,35 @@
 <template>
-  <div class="navbar">
+  <div class="linkslist">
 
+    <Title :title="ttl" :delay="dly" />
     <ul>
-      <li v-for="(rt, index) in rts" :key="rt.id">
-        <Route :name="rt.name" :route="rt.link" :delay="dly + 50 * index" />
+      <li v-for="(lnk, index) in lnks" :key="lnk.id">
+        <Link :name="lnk.name" :link="lnk.link" :delay="dly + 50 * index" />
       </li>
     </ul>
-
-    <br/>
-
-    <h1 v-anime="{ translateY: 5, opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 300, loop: false }">{{ msg }}</h1>
 
   </div>
 </template>
 
 <script>
-import Route from '../atoms/Route'
+import Link from '../atoms/Link'
+import Title from '../atoms/Title'
 
 export default {
-  name: 'Navbar',
-  props: {
-    message: String,
-    routes: Array,
-    delay: Number
-  },
+  name: 'Linkslist',
   components: {
-    Route
+    Link,
+    Title
+  },
+  props: {
+    title: String,
+    links: Array,
+    delay: Number
   },
   data () {
     return {
-      msg: this.message,
-      rts: this.routes,
+      ttl: this.title,
+      lnks: this.links,
       dly: this.delay
     }
   },
@@ -49,10 +48,8 @@ export default {
 }
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
 ul {
   list-style-type: none;
   padding: 0;

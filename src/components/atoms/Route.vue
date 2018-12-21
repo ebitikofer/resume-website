@@ -1,21 +1,21 @@
 <template>
-  <div class="link">
-    <a :href="lnk" target="_blank">{{ nm }}</a>
+  <div class="route">
+    <router-link :to="rt">{{ nm }}</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Link',
+  name: 'Route',
   props: {
     name: String,
-    link: String,
+    route: String,
     delay: Number
   },
   data () {
     return {
       nm: this.name,
-      lnk: this.link,
+      rt: this.route,
       dly: this.delay
     }
   },
@@ -29,6 +29,12 @@ export default {
         backgroundColor: '#FFF',
         duration: 2000,
         delay: this.delay
+      }).add({
+        targets,
+        rotate: '1turn',
+        translateY: 5,
+        duration: 2000,
+        delay: this.delay + 500
       })
   }
 }
