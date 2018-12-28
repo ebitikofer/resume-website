@@ -24,7 +24,7 @@ export default {
         targets,
         translateY: 5,
         opacity: [0.1, 1],
-        backgroundColor: '#FFF',
+        // backgroundColor: '#FFF',
         duration: 2000,
         delay: this.delay
       })
@@ -35,6 +35,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 p {
-  color: #42b983;
+  color: #d2d2d2;
+  font-weight: bold;
+  /* color: #42b983; */
 }
 </style>

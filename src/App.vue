@@ -11,6 +11,10 @@ export default {
 </script>
 
 <style>
+body {
+  background-image: url("assets/vines.jpg");
+  background-repeat: repeat;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

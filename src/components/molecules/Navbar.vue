@@ -41,7 +41,7 @@ export default {
         targets,
         translateY: 5,
         opacity: [0.1, 1],
-        backgroundColor: '#FFF',
+        // backgroundColor: '#FFF',
         duration: 2000,
         delay: this.delay
       })
@@ -51,13 +51,16 @@ export default {
 
 <style scoped>
 h1, h2 {
+  background-color: transparent;
   font-weight: normal;
 }
 ul {
+  background-color: transparent;
   list-style-type: none;
   padding: 0;
 }
 li {
+  background-color: transparent;
   display: inline-block;
   margin: 0 10px;
 }
