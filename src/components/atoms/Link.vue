@@ -37,6 +37,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+@font-face {
+  font-family: CaviarDreams;
+  src: url(/assets/CaviarDreams.ttf) format('truetype');
+}
+
 /* ul {
 	font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
 	list-style-type: none;
@@ -76,6 +81,7 @@ ul li a:hover {
 /* Credit to Matthew J. Early for the unordered list of links CSS */
 
 a {
+  font-family: CaviarDreams;
   font-weight: bold;
   background-color: transparent;
   color: #42b983;

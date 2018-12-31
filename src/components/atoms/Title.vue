@@ -1,10 +1,13 @@
 <template>
+
   <div class="title">
     <h2>{{ ttl }}</h2>
   </div>
+
 </template>
 
 <script>
+
 export default {
   name: 'Title',
   props: {
@@ -30,13 +33,22 @@ export default {
       })
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+
+@font-face {
+  font-family: CaviarDreams;
+  src: url(/assets/CaviarDreams.ttf) format('truetype');
+}
+
+h2 {
   background-color: transparent;
+  font-family: CaviarDreams;
   font-weight: bold;
   color: #d2d2d2;
 }
+
 </style>

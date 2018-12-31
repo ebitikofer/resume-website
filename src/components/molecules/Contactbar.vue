@@ -58,12 +58,12 @@ export default {
   100% { opacity: 1; }
 }
 @keyframes textMoveIn {
-  0%   { left: -100%; }
+  0%   { left: -85%; }
   100% { left: 0%; }
 }
 @keyframes textMoveOut {
   0%   { left: 0%; }
-  100% { left: -100%; }
+  100% { left: -85%; }
 }
 
 .contactbar {
@@ -73,6 +73,11 @@ export default {
   width: 0;
   /* margin-bottom: 2.5em; */
 }
+
+span {
+  font-family: CaviarDreams;
+}
+
 img {
   height: 16px;
   width: 16px;
@@ -93,7 +98,7 @@ ul li {
 	/* background-color: #979777; */
 	/* padding: 6px 14px; */
 	/* margin: 14px; */
-	font-weight: bold;
+	/* font-weight: bold; */
 	/* word-spacing: 2px; */
 	/* letter-spacing: 1px; */
 	/* font-size: 110%; */
@@ -114,8 +119,8 @@ ul li span#a{
   position: relative;
   display: inline;
   background-color: transparent;
-  animation:
-    textMoveOut 1s;
+  /* animation: */
+    /* textMoveOut 1s; */
 }
 
 ul li:hover span#a{
@@ -128,7 +133,7 @@ ul li:hover span#a{
 
 ul li span#b{
   position: relative;
-  display: inline;
+  display: none;
   background-color: transparent;
   animation:
     textFadeOut 2s,

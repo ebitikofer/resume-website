@@ -61,8 +61,8 @@ ul li a {
   text-decoration: none;
 	display: block;
 	/* background-color: #979777; */
-	padding: 6px 14px;
-	margin: 14px;
+	padding: 5px 8px;
+	margin: 5px;
 	font-weight: bold;
 	word-spacing: 2px;
 	letter-spacing: 1px;

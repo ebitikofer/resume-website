@@ -75,13 +75,16 @@ h1, h2 {
   font-family: LemonMilk;
   font-weight: bold;
   color: #d2d2d2;
+  position: relative;
+  left: 25%;
+  width: 50%;
 }
 #menu {
   position: fixed;
   left: 0;
   top: 50%;
   width: 0em;
-  margin-top: -2.5em;
+  /* margin-top: -2.5em; */
 }
 ul {
   background-color: transparent;

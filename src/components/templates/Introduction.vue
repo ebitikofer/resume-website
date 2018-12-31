@@ -1,5 +1,5 @@
 <template>
-  <div class="introduction">
+  <div class="introduction" v-scroll="handleScroll">
 
     <Navbar :message="msg" :routes="nvs" :delay = "0" /><br/>
 
@@ -38,6 +38,14 @@ export default {
         { name: 'About', link: '/about' }
       ]
     }
+  },
+  methods: {
+    handleScroll: function (evt) {
+      if (window.scrollY > 50) {
+        this.$router.push('/coding')
+      }
+      return window.scrollY > 100
+    }
   }
 }
 </script>
@@ -75,5 +83,8 @@ p {
   font-family: CaviarDreams;
   color: #d2d2d2;
   background-color: transparent;
+  position: relative;
+  left: 25%;
+  width: 50%;
 }
 </style>

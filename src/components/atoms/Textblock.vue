@@ -34,9 +34,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+@font-face {
+  font-family: CaviarDreams;
+  src: url(/assets/CaviarDreams.ttf) format('truetype');
+}
+
 p {
+  font-family: CaviarDreams;
   color: #d2d2d2;
-  font-weight: bold;
   /* color: #42b983; */
 }
+
 </style>
