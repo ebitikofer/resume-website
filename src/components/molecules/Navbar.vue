@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
 
-    <ul>
+    <ul id="menu">
       <li v-for="(rt, index) in rts" :key="rt.id">
         <Route :name="rt.name" :route="rt.link" :delay="dly + 50 * index" />
       </li>
@@ -9,10 +9,12 @@
 
     <br/>
 
-    <h1 v-anime="{ translateY: 5, opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 300, loop: false }">{{ msg }}</h1>
+    <h1 v-anime="{ translateY: 5, opacity: [.1, 1],  duration: 2000, delay: 300, loop: false }">{{ msg }}</h1>
 
   </div>
 </template>
+
+/* backgroundColor: '#FFF', */
 
 <script>
 import Route from '../atoms/Route'
@@ -50,9 +52,36 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: CaviarDreams;
+  src: url(../../assets/CaviarDreams.ttf) format('truetype');
+}
+@font-face {
+  font-family: CaviarDreams;
+  font-weight: bold;
+  src: url(../../assets/CaviarDreams_Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: LemonMilk;
+  src: url(../../assets/LemonMilk.otf) format('opentype');
+}
+@font-face {
+  font-family: LemonMilk;
+  font-weight: bold;
+  src: url(../../assets/LemonMilkbold.otf) format('opentype');
+}
 h1, h2 {
   background-color: transparent;
-  font-weight: normal;
+  font-family: LemonMilk;
+  font-weight: bold;
+  color: #d2d2d2;
+}
+#menu {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  width: 0em;
+  margin-top: -2.5em;
 }
 ul {
   background-color: transparent;
@@ -60,7 +89,9 @@ ul {
   padding: 0;
 }
 li {
+  backdrop-filter: blur(4px);
   background-color: transparent;
+  font-family: LemonMilk;
   display: inline-block;
   margin: 0 10px;
 }

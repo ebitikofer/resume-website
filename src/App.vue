@@ -12,8 +12,9 @@ export default {
 
 <style>
 body {
-  background-image: url("assets/vines.jpg");
-  background-repeat: repeat;
+  background: white url("assets/Infant_Stars_in_Orion.jpg") no-repeat fixed center;
+  background-size: cover;
+  height: 100%;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -23,5 +24,24 @@ body {
   color: #2c3e50;
   /* background-color: #2c3e50; */
   margin-top: 10px;
+  height: 100%;
+}
+@font-face {
+  font-family: CaviarDreams;
+  src: url(/assets/CaviarDreams.ttf) format('truetype');
+}
+@font-face {
+  font-family: CaviarDreams;
+  font-weight: bold;
+  src: url(/assets/CaviarDreams_Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: LemonMilk;
+  src: url(/assets/LemonMilk.otf) format('opentype');
+}
+@font-face {
+  font-family: LemonMilk;
+  font-weight: bold;
+  src: url(/assets/LemonMilkbold.otf) format('opentype');
 }
 </style>

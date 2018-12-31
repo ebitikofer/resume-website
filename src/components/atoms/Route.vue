@@ -1,6 +1,6 @@
 <template>
   <div class="route">
-    <router-link :to="rt">{{ nm }}</router-link>
+    <router-link :to="rt"><span id="a">{{ nm.charAt(0) }}</span><span id="b">{{ nm }}</span></router-link>
   </div>
 </template>
 
@@ -58,29 +58,46 @@ ul li {
 }
 
 ul li a {
+  text-decoration: none;
 	display: block;
-	background-color: #979777;
+	/* background-color: #979777; */
 	padding: 6px 14px;
 	margin: 14px;
 	font-weight: bold;
 	word-spacing: 2px;
 	letter-spacing: 1px;
 	font-size: 110%;
-	color: #272209;
-	border: 3px outset #272709;
+	/* color: #272209; */
+  color: #d2d2d2;
+	/* border: 3px outset #272709; */
+	border: 3px outset #d2d2d2;
 	border-radius: 25px;
 }
 
 ul li a:visited {
   background-color: transparent;
-	color: #272209;
+	/* color: #272209; */
+  color: #d2d2d2;
 }
 
-ul li a:hover {
+ul li a span#a{
+  display: inline;
   background-color: transparent;
-  backdrop-filter: blur(1px);
-	border: 3px inset #372759;
-	color: #000000;
+}
+
+ul li a:hover span#a{
+  display: none;
+  background-color: transparent;
+}
+
+ul li a span#b{
+  display: none;
+  background-color: transparent;
+}
+
+ul li a:hover span#b{
+  display: inline;
+  background-color: transparent;
 }
 
 /* Credit to Matthew J. Early for the unordered list of links CSS */
@@ -88,6 +105,8 @@ ul li a:hover {
 a {
   font-weight: bold;
   background-color: transparent;
-  color: #42b983;
+  /* color: #42b983; */
+  color: #d2d2d2;
 }
+
 </style>

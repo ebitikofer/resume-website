@@ -11,22 +11,26 @@
     <p v-anime="{ translateY: 5, opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 550, loop: false }"> · linkedin.com/in/ericbitikofer/ · </p>
     <p v-anime="{ translateY: 5, opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 550, loop: false }"> · 99 Main Street, Chauncey OH 45719 · </p>
 
+    <Contactbar />
+
   </div>
 </template>
 
 <script>
 import Navbar from '../molecules/Navbar'
 import Textsection from '../molecules/Textsection'
+import Contactbar from '../molecules/Contactbar'
 
 export default {
   name: 'Introduction',
   components: {
     Navbar,
-    Textsection
+    Textsection,
+    Contactbar
   },
   data () {
     return {
-      msg: 'Eric Bitikofer',
+      msg: 'Eric\nBitikofer',
       nvs: [
         { name: 'Coding', link: '/coding' },
         { name: 'Qualifictions', link: '/qualifications' },
@@ -40,8 +44,36 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@font-face {
+  font-family: CaviarDreams;
+  src: url(/assets/CaviarDreams.ttf) format('truetype');
+}
+@font-face {
+  font-family: CaviarDreams;
+  font-weight: bold;
+  src: url(/assets/CaviarDreams_Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: LemonMilk;
+  src: url(/assets/LemonMilk.otf) format('opentype');
+}
+@font-face {
+  font-family: LemonMilk;
+  font-weight: bold;
+  src: url(/assets/LemonMilkbold.otf) format('opentype');
+}
+.introduction {
+  height: 100%;
+}
 h1, h2 {
+  font-family: LemonMilk;
+  font-weight: bold;
+  color: #d2d2d2;
   background-color: transparent;
-  font-weight: normal;
+}
+p {
+  font-family: CaviarDreams;
+  color: #d2d2d2;
+  background-color: transparent;
 }
 </style>

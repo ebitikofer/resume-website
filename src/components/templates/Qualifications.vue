@@ -62,13 +62,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
-  font-weight: normal;
+  color: #d2d2d2;
+  font-weight: bold;
 }
 ul {
+  color: #d2d2d2;
   list-style-type: none;
   padding: 0;
 }
 li {
+  color: #d2d2d2;
   display: inline-block;
   margin: 0 10px;
 }
