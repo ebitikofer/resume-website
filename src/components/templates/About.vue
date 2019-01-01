@@ -3,7 +3,7 @@
 
     <Navbar :message="msg" :routes="nvs" :delay = "0" /><br/>
 
-    <img src="../../assets/me.png" v-anime="{ rotate: 360, easing: 'easeInOutQuint', opacity: [0, 1], duration: 2000, delay: 400, loop: false }">
+    <img src="../../assets/face.svg" v-anime="{ rotate: 360, easing: 'easeInOutQuint', opacity: [0, 1], duration: 2000, delay: 400, loop: false }">
 
     <Textsection header="Bio" text="I have been programming since age 14 and MySpace" :delay="450" /><br/>
 
@@ -37,4 +37,10 @@ export default {
 </script>
 
 <style scoped>
+
+img {
+  width: 200px;
+  /* height: 200px; */
+}
+
 </style>
