@@ -11,10 +11,15 @@ export default {
 </script>
 
 <style>
-body {
-  background: white url("assets/Infant_Stars_in_Orion.jpg") no-repeat fixed center;
+html {
+  background: white url("assets/Infant_Stars_in_Orion.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   height: 100%;
+  min-height: 100%;
+  overflow: hidden;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
