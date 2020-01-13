@@ -9,7 +9,7 @@
     </ul>
 
     <div class="card page-body">
-      <h1 v-anime="{ translateY: [-5, 0], opacity: [.1, 1],  duration: 2000, delay: 300, loop: false }">{{ msg }}</h1>
+      <h1 v-anime="{ translateY: [-5, 0], opacity: [.1, 1],  duration: 2000, delay: 300, loop: false }">{{ message }}</h1>
     </div>
 
   </div>

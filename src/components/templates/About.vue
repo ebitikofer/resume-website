@@ -1,11 +1,9 @@
 <template>
+
   <div class="about">
 
-    <Navbar :message="msg" :routes="nvs" :delay = "0" />
-
     <!-- <img src="../../assets/face.svg" v-anime="{ rotate: 360, easing: 'easeInOutQuint', opacity: [0, 1], duration: 2000, delay: 400, loop: false }"> -->
-
-    <div class="shapeshifter" ></div>
+    <div class="shapeshifter"></div>
 
     <div class="card page-body">
 
@@ -16,56 +14,46 @@
     </div>
 
   </div>
+
 </template>
 
 <script>
-import Navbar from '../molecules/Navbar'
-import Textsection from '../molecules/Textsection'
 
-export default {
-  name: 'About',
-  components: {
-    Navbar,
-    Textsection
-  },
-  data () {
-    return {
-      msg: 'About',
-      nvs: [
-        { name: 'INTRODUCTION', link: '/' },
-        { name: 'CODING', link: '/coding' },
-        { name: 'QUALIFICATIONS', link: '/qualifications' },
-        { name: 'DEMOS', link: '/demos' }
-      ]
+  import Textsection from '../molecules/Textsection'
+
+  export default {
+    name: 'About',
+    components: {
+      Textsection
     }
   }
-}
+
 </script>
 
 <style scoped>
 
-img {
-  width: 200px;
-  /* height: 200px; */
-}
+  img {
+    width: 200px;
+    /* height: 200px; */
+  }
 
-@keyframes play150 {
-  0% { background-position: 0px 0px; }
-  100% { background-position: -31500px 0px; }
-}
+  @keyframes play150 {
+    0% { background-position: 0px 0px; }
+    100% { background-position: -31500px 0px; }
+  }
 
-.shapeshifter {
-  position: relative;
-  margin: auto;
-  animation-name: play150;
-  animation-duration: 5000ms;
-  animation-timing-function: steps(150);
-  background-image: url(../../assets/face.svg);
-  background-position: -31500px 0px;
-   /* background-size: 100% 100%; */
-  width: 210px;
-  height: 297px;
-  background-repeat: no-repeat;
-}
+  .shapeshifter {
+    position: relative;
+    margin: auto;
+    animation-name: play150;
+    animation-duration: 5000ms;
+    animation-timing-function: steps(150);
+    background-image: url(../../assets/face.svg);
+    background-position: -31500px 0px;
+    /* background-size: 100% 100%; */
+    width: 210px;
+    height: 297px;
+    background-repeat: no-repeat;
+  }
 
 </style>

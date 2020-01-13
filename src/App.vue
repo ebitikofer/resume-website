@@ -1,7 +1,7 @@
 <template>
 
   <div id="app">
-    <!-- <Navbar :message="msg" :routes="nvs" :delay="0" /> -->
+    <Navbar v-bind:message="msg" v-bind:routes="nvs" :delay="0" />
     <router-view />
     <Contactbar />
   </div>
@@ -20,8 +20,27 @@ import Contactbar from './components/molecules/Contactbar'
     },
     data () {
       return {
-        msg: 'Eric\nBitikofer',
+        // msg: 'Eric\nBitikofer',
+        // msg: titleMsg,
+        msg: '',
         nvs: [
+          { name: 'INTRODUCTION', link: '/' },
+          { name: 'CODING', link: '/coding' },
+          { name: 'QUALIFICATIONS', link: '/qualifications' },
+          { name: 'DEMOS', link: '/demos' },
+          { name: 'ABOUT', link: '/about' }
+        ]
+      }
+    },
+    watch: {
+      $route (to, from) {
+        if (this.$route.name === 'Introduction') {
+          this.msg = 'Eric\nBitikofer'
+        } else {
+          this.msg = this.$route.name
+        }
+        console.log('current route', this.msg)
+        this.nvs = [
           { name: 'INTRODUCTION', link: '/' },
           { name: 'CODING', link: '/coding' },
           { name: 'QUALIFICATIONS', link: '/qualifications' },
@@ -88,6 +107,13 @@ ul {
   padding: 0px;
   margin: 0px;
   list-style-type: none;
+}
+
+li {
+  background-color: transparent;
+  display: inline-block;
+  margin: 0 10px;
+  color: #d2d2d2;
 }
 
 #app {

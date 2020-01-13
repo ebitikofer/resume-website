@@ -1,8 +1,6 @@
 <template>
+
   <div class="qualifications">
-
-    <Navbar :message="msg" :routes="nvs" :delay="0" />
-
     <div class="card page-body">
 
       <h2 v-anime="{ translateY: [-5, 0], opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 400, loop: false }">Education</h2>
@@ -35,41 +33,22 @@
       </ul>
 
     </div>
-
   </div>
+
 </template>
 
 <script>
-import Navbar from '../molecules/Navbar'
+
 import Link from '../atoms/Link'
 
-export default {
-  name: 'Qualifications',
-  components: {
-    Navbar,
-    Link
-  },
-  data () {
-    return {
-      msg: 'Qualifications',
-      nvs: [
-        { name: 'INTRODUCTION', link: '/' },
-        { name: 'CODING', link: '/coding' },
-        { name: 'DEMOS', link: '/demos' },
-        { name: 'ABOUT', link: '/about' }
-      ]
+  export default {
+    name: 'Qualifications',
+    components: {
+      Link
     }
   }
-}
+
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-li {
-  color: #d2d2d2;
-  display: inline-block;
-  margin: 0 10px;
-}
-
 </style>
