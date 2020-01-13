@@ -1,26 +1,34 @@
 <template>
+
   <div id="app">
     <router-view />
   </div>
+
 </template>
 
 <script>
+
 export default {
   name: 'App'
 }
+
 </script>
 
 <style>
-html {
-  background: white url("assets/Infant_Stars_in_Orion.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+body {
+  background: white url("assets/Infant_Stars_in_Orion.png") no-repeat fixed center;
   background-size: cover;
   height: 100%;
-  min-height: 100%;
-  overflow: hidden;
+  /* overflow: scroll; */
+  /* overflow-x: hidden; */
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,22 +39,27 @@ html {
   margin-top: 10px;
   height: 100%;
 }
+
 @font-face {
   font-family: CaviarDreams;
   src: url(/assets/CaviarDreams.ttf) format('truetype');
 }
+
 @font-face {
   font-family: CaviarDreams;
   font-weight: bold;
   src: url(/assets/CaviarDreams_Bold.ttf) format('truetype');
 }
+
 @font-face {
   font-family: LemonMilk;
   src: url(/assets/LemonMilk.otf) format('opentype');
 }
+
 @font-face {
   font-family: LemonMilk;
   font-weight: bold;
   src: url(/assets/LemonMilkbold.otf) format('opentype');
 }
+
 </style>
