@@ -81,11 +81,4 @@ h1, h2 {
   width: 50%;
 }
 
-p {
-  background-color: transparent;
-  position: relative;
-  left: 25%;
-  width: 50%;
-}
-
 </style>

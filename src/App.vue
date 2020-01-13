@@ -68,9 +68,15 @@ div {
 
 h1, h2 {
   background-color: transparent;
+  color: #d2d2d2; /* qualifications */
+  font-weight: bold; /* qualifications */
 }
 
 p {
+  position: relative;
+  left: 25%;
+  width: 50%;
+  background-color: transparent;
   font-family: CaviarDreams;
   color: white;
   /* color: #d2d2d2; off-white*/
