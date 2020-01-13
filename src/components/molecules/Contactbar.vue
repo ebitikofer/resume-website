@@ -23,8 +23,6 @@
   </div>
 </template>
 
-/* backgroundColor: '#FFF', */
-
 <script>
 import Route from '../atoms/Route'
 
@@ -69,7 +67,7 @@ export default {
 .contactbar {
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 15px;
   width: 0;
   /* margin-bottom: 2.5em; */
 }

@@ -48,7 +48,8 @@ h2 {
   background-color: transparent;
   font-family: CaviarDreams;
   font-weight: bold;
-  color: #d2d2d2;
+  color: white;
+  /* color: #d2d2d2; */
 }
 
 </style>

@@ -42,7 +42,8 @@ export default {
 
 p {
   font-family: CaviarDreams;
-  color: #d2d2d2;
+  color: white;
+  /* color: #d2d2d2; */
   /* color: #42b983; */
 }
 
