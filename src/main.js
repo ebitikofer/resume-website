@@ -31,69 +31,64 @@ new Vue({
     this.active = 1
     this.lastActive = 1
     window.addEventListener('scroll', this.handleScroll)
-    document.addEventListener('wheel', this.handleWheel, true);
+    document.addEventListener('wheel', this.handleWheel, true)
   },
   methods: {
     handleWheel (e) {
-
-      var threshold = 5;
-
-      var variation = parseInt(e.deltaY);
+      var threshold = 5
+      var variation = parseInt(e.deltaY)
       // console.log(e.deltaY);
-      console.log(variation);
+      console.log(variation)
 
-      if (this.wait == false) {
-
+      if (this.wait === false) {
         if (variation < -threshold) {
-          console.log("MouseWheelUp");
+          console.log('MouseWheelUp')
           if (this.active > 1) {
-            this.active--;
-            this.changed = true;
+            this.active--
+            this.changed = true
           }
         } else if (variation > threshold) {
-          console.log("MouseWheelDown");
+          console.log('MouseWheelDown')
           if (this.active < 5) {
-            this.active++;
-            this.changed = true;
+            this.active++
+            this.changed = true
           }
         }
-
       }
 
-      if (this.changed == true) {
-        console.log(this.active);
+      if (this.changed === true) {
+        console.log(this.active)
         if (this.active === 1) {
           this.$router.push('/')
-          console.log("Intro");
+          console.log('Intro')
         } else if (this.active === 2) {
-          console.log("Code");
+          console.log('Code')
           this.$router.push('/coding')
         } else if (this.active === 3) {
-          console.log("Qualifiers");
+          console.log('Qualifiers')
           this.$router.push('/qualifications')
         } else if (this.active === 4) {
-          console.log("Demo");
+          console.log('Demo')
           this.$router.push('/demos')
         } else if (this.active === 5) {
-          console.log("About");
+          console.log('About')
           this.$router.push('/about')
           // VueScrollTo.scrollTo('.section-5', 500, options)
         }
-        this.changed = false;
-        this.wait = true;
+        this.changed = false
+        this.wait = true
         setTimeout(this.handleTimeout, 1000)
       }
-
     },
-    handleTimeout() {
+    handleTimeout () {
       // if (this.down) this.active++
       // else this.active--
       // this.scrollStarted = false
       // document.body.style.overflow = 'auto'
-      this.wait = false;
+      this.wait = false
     },
-    handleScroll(e) {
-      console.log('Scrolling');
+    handleScroll (e) {
+      console.log('Scrolling')
       let vm = this
       let options = {
         container: 'body',
@@ -103,7 +98,7 @@ new Vue({
         onStart: function () {
           document.body.style.overflow = 'hidden'
         },
-        onDone: _.debounce(function(element) {
+        onDone: _.debounce(function (element) {
           if (vm.down) vm.active++
           else vm.active--
           vm.scrollStarted = false
@@ -150,6 +145,7 @@ new Vue({
       // this.scrollStarted = false
       // document.body.style.overflow = 'auto'
       setTimeout(this.handleTimeout, 250)
+      console.log(options)
     }
   },
   template: '<App/>'

@@ -54,7 +54,7 @@ export default {
   methods: {
 
     mouseOver: function () {
-      console.log("mouseover");
+      console.log('mouseover')
     //   for (var i = this.nm.length; i > 0 ; i--) {
     //     var span = "<span class='ghost hidden'>" + this.nm.charAt(i) + "</span>";
     //     this.$refs.linktext.insertAdjacentHTML("afterend", span);
@@ -66,7 +66,7 @@ export default {
     },
 
     mouseOut: function () {
-      console.log("mouseout");
+      console.log('mouseout')
     //   for (var j = this.nm.length; j > 0; j--) {
     //     this.$refs.link.lastElementChild.remove();
     //   }
@@ -74,7 +74,7 @@ export default {
 
     removeHidden: function (child) {
       // for (var i = 1; i < this.nm.length; i++) {
-        this.$refs.link.children[child].classList.remove("hidden");
+        this.$refs.link.children[child].classList.remove('hidden')
       // }
     }
 
