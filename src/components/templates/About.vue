@@ -7,9 +7,15 @@
 
     <div class="shapeshifter" ></div>
 
-    <Textsection header="Bio" text="I have been programming since age 14 and MySpace" :delay="450" /><br/>
+    <div class="holder">
 
-    <Textsection header="Interests" text="Programming, Hardware, Drumming, Art, Plants" :delay="550" />
+      <Textsection header="Bio" text="The things that drive me are technology music, art, and nature. Growing up in the family that I did, working with code and hardware was a given. Ever since I can remember my father and brother were making things, taking things apart, and putting the back together in different ways. So to even be able to keep up in conversation I constantly had to be learning. I started programming when I was about fourteen, creating div layouts for my myspace profile because I had to have the most custom profile out of my friends. As for learning about hardware, I started messing with making basic circuits in high school and throughout college I've made many basic systems from an electric drum kit to a small window side garden that lets you know when it needs to be watered. Music, art, and nature also have been an integral part of my life since I was child as well. My father graduated with a degree in Fine Arts and Music and my mother in Botany so these subjects were inescapable. I remember as a child always learning about music and plants on every car ride I took with my parents but that contributed to my abilty to keep a garden and play instruments in my daily life. Art was the hobby that I took on myself in my high school. I couldn't resist the opportunity to express the way I saw the world in a visual format, so any chance I got, I would paint a painting or a mural at school. These days I don't paint as many paintings but I find an outlet in digital media when I can." :delay="450" /><br/>
+
+      <Textsection header="Interests" text="Programming, Electrical Engineering, Drumming, Art, Plants" :delay="550" />
+
+    </div>
+
+    <Contactbar />
 
   </div>
 </template>
@@ -17,21 +23,23 @@
 <script>
 import Navbar from '../molecules/Navbar'
 import Textsection from '../molecules/Textsection'
+import Contactbar from '../molecules/Contactbar'
 
 export default {
   name: 'About',
   components: {
     Navbar,
-    Textsection
+    Textsection,
+    Contactbar
   },
   data () {
     return {
       msg: 'About',
       nvs: [
-        { name: 'Introduction', link: '/' },
-        { name: 'Coding', link: '/coding' },
-        { name: 'Qualifictions', link: '/qualifications' },
-        { name: 'Demos', link: '/demos' }
+        { name: 'INTRODUCTION', link: '/' },
+        { name: 'CODING', link: '/coding' },
+        { name: 'QUALIFICATIONS', link: '/qualifications' },
+        { name: 'DEMOS', link: '/demos' }
       ]
     }
   }
@@ -64,4 +72,12 @@ img {
   background-repeat: no-repeat;
 }
 
+.holder {
+  background-color: rgba(255,255,255, 0.25); /* Black w/opacity/see-through */
+  position: relative;
+  left: 25%;
+  width: 50%;
+  border-radius: 15px;
+  padding: 20px;
+}
 </style>

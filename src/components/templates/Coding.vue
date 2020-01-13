@@ -3,9 +3,15 @@
 
     <Navbar :message="msg" :routes="nvs" :delay = "0" /><br/>
 
-    <Linkslist title="Languages" :links="lnggs" :delay="450" /><br/>
+    <div class="holder">
 
-    <Linkslist title="Frameworks/Libraries/APIs" :links="lbs" :delay="850" />
+      <Linkslist title="Languages" :links="lnggs" :delay="450" /><br/>
+
+      <Linkslist title="Frameworks/Libraries/APIs" :links="lbs" :delay="850" />
+
+    </div>
+
+    <Contactbar />
 
   </div>
 </template>
@@ -13,21 +19,23 @@
 <script>
 import Navbar from '../molecules/Navbar'
 import Linkslist from '../molecules/Linkslist'
+import Contactbar from '../molecules/Contactbar'
 
 export default {
   name: 'Coding',
   components: {
     Navbar,
-    Linkslist
+    Linkslist,
+    Contactbar
   },
   data () {
     return {
       msg: 'Coding',
       nvs: [
-        { name: 'Introduction', link: '/' },
-        { name: 'Qualifictions', link: '/qualifications' },
-        { name: 'Demos', link: '/demos' },
-        { name: 'About', link: '/about' }
+        { name: 'INTRODUCTION', link: '/' },
+        { name: 'QUALIFICATIONS', link: '/qualifications' },
+        { name: 'DEMOS', link: '/demos' },
+        { name: 'ABOUT', link: '/about' }
       ],
       lnggs: [
         { name: 'C++', link: 'https://isocpp.org/' },
@@ -53,4 +61,12 @@ export default {
 </script>
 
 <style scoped>
+.holder {
+  background-color: rgba(255,255,255, 0.25); /* Black w/opacity/see-through */
+  position: relative;
+  left: 25%;
+  width: 50%;
+  border-radius: 15px;
+  padding: 20px;
+}
 </style>
