@@ -24,7 +24,7 @@ export default {
     this.$anime
       .timeline().add({
         targets,
-        translateY: 5,
+        translateY: [-5, 0],
         opacity: [0.1, 1],
         // backgroundColor: '#FFF',
         duration: 2000,
@@ -37,16 +37,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-@font-face {
-  font-family: CaviarDreams;
-  src: url(/assets/CaviarDreams.ttf) format('truetype');
-}
-
 /* ul {
 	font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
 	text-align: center;
 	margin-top: 18px;
 }

@@ -36,7 +36,7 @@ export default {
     this.$anime
       .timeline().add({
         targets,
-        translateY: 5,
+        translateY: [-5, 0],
         opacity: [0.1, 1],
         // backgroundColor: '#FFF',
         duration: 2000,
@@ -87,27 +87,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 
-ul {
-  background-color: transparent;
-	font-family: 'Raleway', sans-serif;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	margin-top: 18px;
-}
-
-ul li {
-  background-color: transparent;
-	display: inline-block;
-}
-
 ul li a {
   text-decoration: none;
 	display: block;
 	/* background-color: #979777; */
-	padding: 5px 8px;
-	margin: 5px;
 	font-weight: bold;
 	word-spacing: 2px;
 	letter-spacing: 1px;
@@ -124,8 +107,6 @@ ul li a:visited {
 	/* color: #272209; */
   color: #d2d2d2;
 }
-
-/* Credit to Matthew J. Early for the unordered list of links CSS */
 
 a {
   font-weight: bold;

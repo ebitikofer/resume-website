@@ -36,7 +36,7 @@ export default {
     this.$anime
       .timeline().add({
         targets,
-        translateY: 5,
+        translateY: [-5, 0],
         opacity: [0.1, 1],
         // backgroundColor: '#FFF',
         duration: 2000,
@@ -47,27 +47,11 @@ export default {
 </script>
 
 <style scoped>
-@keyframes textFadeIn {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes textFadeOut {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes textMoveIn {
-  0%   { left: -85%; }
-  100% { left: 0%; }
-}
-@keyframes textMoveOut {
-  0%   { left: 0%; }
-  100% { left: -85%; }
-}
 
 .contactbar {
   position: fixed;
-  left: 0;
-  bottom: 15px;
+  left: 20px;
+  bottom: 20px;
   width: 0;
   /* margin-bottom: 2.5em; */
 }
@@ -81,11 +65,6 @@ img {
   width: 16px;
   position: relative;
   top: 2px;
-}
-ul {
-  background-color: transparent;
-  list-style-type: none;
-  padding: 0;
 }
 
 ul li {
@@ -110,7 +89,7 @@ ul li {
 
 li {
   backdrop-filter: blur(4px);
-  margin: 0 10px;
+  /* margin: 0 10px; */
 }
 
 ul li span#a{

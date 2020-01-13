@@ -8,12 +8,8 @@
       </li>
     </ul>
 
-    <br/>
-
-    <div class="holder">
-
-      <h1 v-anime="{ translateY: 5, opacity: [.1, 1],  duration: 2000, delay: 300, loop: false }">{{ msg }}</h1>
-
+    <div class="card page-body">
+      <h1 v-anime="{ translateY: [-5, 0], opacity: [.1, 1],  duration: 2000, delay: 300, loop: false }">{{ msg }}</h1>
     </div>
 
   </div>
@@ -46,7 +42,7 @@ export default {
     this.$anime
       .timeline().add({
         targets,
-        translateY: 5,
+        translateY: [-5, 0],
         opacity: [0.1, 1],
         // backgroundColor: '#FFF',
         duration: 2000,
@@ -58,60 +54,7 @@ export default {
 
 <style scoped>
 
-@font-face {
-  font-family: GlacialIndifference;
-  src: url(../../assets/GlacialIndifference.otf) format('opentype');
-}
-
-@font-face {
-  font-family: GlacialIndifference;
-  font-weight: bold;
-  src: url(../../assets/GlacialIndifference_Bold.otf) format('opentype');
-}
-
-@font-face {
-  font-family: CaviarDreams;
-  src: url(../../assets/CaviarDreams.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: CaviarDreams;
-  font-weight: bold;
-  src: url(../../assets/CaviarDreams_Bold.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: LemonMilk;
-  src: url(../../assets/LemonMilk.otf) format('opentype');
-}
-
-@font-face {
-  font-family: LemonMilk;
-  font-weight: bold;
-  src: url(../../assets/LemonMilkbold.otf) format('opentype');
-}
-
-@keyframes textMoveIn {
-  0%   { left: -25%; }
-  100% { left: 0%; }
-}
-
-@keyframes textMoveOut {
-  0%   { left: 0%; }
-  100% { left: -25%; }
-}
-
-.holder {
-  background-color: rgba(255,255,255, 0.25); /* Black w/opacity/see-through */
-  position: relative;
-  left: 25%;
-  width: 50%;
-  border-radius: 15px;
-  padding: 20px;
-}
-
 h1, h2 {
-  background-color: transparent;
 	font-family: 'GlacialIndifference';
   font-weight: bold;
   color: white;
@@ -123,25 +66,22 @@ h1, h2 {
 
 #menu {
   position: fixed;
-  left: 0;
-  top: -5%;
+  left: 0px;
   width: 0em;
   /* margin-top: -2.5em; */
 }
 
 ul {
-  background-color: transparent;
-  list-style-type: none;
-  padding: 0;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
 }
 
 li {
-  backdrop-filter: blur(4px);
+	display: inline-block;
+	margin-bottom: 20px;
   background-color: transparent;
+  backdrop-filter: blur(4px);
 	font-family: 'GlacialIndifference';
-  font-weight: bold;
-  display: inline-block;
-  margin: 0 10px;
 }
 
 .route {

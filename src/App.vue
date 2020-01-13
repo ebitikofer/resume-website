@@ -1,16 +1,36 @@
 <template>
 
   <div id="app">
+    <!-- <Navbar :message="msg" :routes="nvs" :delay="0" /> -->
     <router-view />
+    <Contactbar />
   </div>
 
 </template>
 
 <script>
+import Navbar from './components/molecules/Navbar'
+import Contactbar from './components/molecules/Contactbar'
 
-export default {
-  name: 'App'
-}
+  export default {
+    name: 'App',
+    components: {
+      Navbar,
+      Contactbar
+    },
+    data () {
+      return {
+        msg: 'Eric\nBitikofer',
+        nvs: [
+          { name: 'INTRODUCTION', link: '/' },
+          { name: 'CODING', link: '/coding' },
+          { name: 'QUALIFICATIONS', link: '/qualifications' },
+          { name: 'DEMOS', link: '/demos' },
+          { name: 'ABOUT', link: '/about' }
+        ]
+      }
+    }
+  }
 
 </script>
 
@@ -21,45 +41,119 @@ export default {
     background: transparent; /* make scrollbar transparent */
 }
 
-body {
-  background: white url("assets/Infant_Stars_in_Orion.png") no-repeat fixed center;
-  background-size: cover;
+body, html {
+  width: 100%;
   height: 100%;
-  /* overflow: scroll; */
-  /* overflow-x: hidden; */
+  margin: 0px;
+  padding: 0px;
+
 }
 
-#app {
+body {
+  padding: 20px;
+  background: white url("assets/Infant_Stars_in_Orion.png") no-repeat fixed center;
+  background-size: cover;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  /* overflow: scroll; */
+  /* overflow-x: hidden; */
+}
+
+div {
+  width: inherit;
+}
+
+h1, h2 {
+  background-color: transparent;
+}
+
+p {
+  font-family: CaviarDreams;
+  color: white;
+  /* color: #d2d2d2; off-white*/
+  /* color: #42b983; green-highlight*/
+}
+
+ul {
+  background-color: transparent;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+#app {
   /* background-color: #2c3e50; */
-  margin-top: 10px;
   height: 100%;
 }
 
+.card {
+  background-color: rgba(255,255,255, 0.25); /* Black w/opacity/see-through */
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.page-body {
+  position: relative;
+  left: 25%;
+  width: 50%;
+  height: 100%;
+}
+
+@keyframes textFadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes textFadeOut {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes textMoveIn {
+  0%   { left: -85%; }
+  100% { left: 0%; }
+}
+
+@keyframes textMoveOut {
+  0%   { left: 0%; }
+  100% { left: -85%; }
+}
+
 @font-face {
   font-family: CaviarDreams;
-  src: url(/assets/CaviarDreams.ttf) format('truetype');
+  src: url(./assets/CaviarDreams.ttf) format('truetype');
 }
 
 @font-face {
   font-family: CaviarDreams;
   font-weight: bold;
-  src: url(/assets/CaviarDreams_Bold.ttf) format('truetype');
+  src: url(./assets/CaviarDreams_Bold.ttf) format('truetype');
 }
 
 @font-face {
   font-family: LemonMilk;
-  src: url(/assets/LemonMilk.otf) format('opentype');
+  src: url(./assets/LemonMilk.otf) format('opentype');
 }
 
 @font-face {
   font-family: LemonMilk;
   font-weight: bold;
-  src: url(/assets/LemonMilkbold.otf) format('opentype');
+  src: url(./assets/LemonMilkbold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: GlacialIndifference;
+  src: url(./assets/GlacialIndifference.otf) format('opentype');
+}
+
+@font-face {
+  font-family: GlacialIndifference;
+  font-weight: bold;
+  src: url(./assets/GlacialIndifference_Bold.otf) format('opentype');
 }
 
 </style>

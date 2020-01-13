@@ -1,9 +1,9 @@
 <template>
   <div class="coding">
 
-    <Navbar :message="msg" :routes="nvs" :delay = "0" /><br/>
+    <Navbar :message="msg" :routes="nvs" :delay = "0" />
 
-    <div class="holder">
+    <div class="card page-body">
 
       <Linkslist title="Languages" :links="lnggs" :delay="450" /><br/>
 
@@ -11,22 +11,18 @@
 
     </div>
 
-    <Contactbar />
-
   </div>
 </template>
 
 <script>
 import Navbar from '../molecules/Navbar'
 import Linkslist from '../molecules/Linkslist'
-import Contactbar from '../molecules/Contactbar'
 
 export default {
   name: 'Coding',
   components: {
     Navbar,
-    Linkslist,
-    Contactbar
+    Linkslist
   },
   data () {
     return {
@@ -61,12 +57,5 @@ export default {
 </script>
 
 <style scoped>
-.holder {
-  background-color: rgba(255,255,255, 0.25); /* Black w/opacity/see-through */
-  position: relative;
-  left: 25%;
-  width: 50%;
-  border-radius: 15px;
-  padding: 20px;
-}
+
 </style>
