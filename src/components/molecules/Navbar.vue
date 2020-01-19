@@ -2,15 +2,17 @@
 
   <div class="navbar">
 
-    <ul id="menu">
-      <li class="route" v-for="(rt, index) in rts" :key="rt.id">
-        <Route :name="rt.name" :route="rt.link" :delay="dly + 50 * index" />
-      </li>
-    </ul>
+    <Card :delay="dly">
+      <ul id="menu">
+        <li class="route" v-for="(rt, index) in rts" :key="rt.id">
+          <Route :name="rt.name" :route="rt.link" :active="$route.path === rt.link ? true : false" :delay="dly + 50 * index" />
+        </li>
+      </ul>
+    </Card>
 
-    <div class="card page-body">
-      <h1 class="header text-positioning" v-anime="{ translateY: [-5, 0], opacity: [.1, 1],  duration: 2000, delay: 300, loop: false }">{{ message }}</h1>
-    </div>
+    <Card :delay="dly">
+      <h1 class="header text-positioning" v-anime="{ translateY: [-5, 0], opacity: [.1, 1],  duration: 2000, delay: dly, loop: false }">{{ message }}</h1>
+    </Card>
 
   </div>
 
@@ -18,6 +20,7 @@
 
 <script>
 
+import Card from '../atoms/Card'
 import Route from '../atoms/Route'
 
 export default {
@@ -28,9 +31,11 @@ export default {
     delay: Number
   },
   components: {
+    Card,
     Route
   },
   data () {
+    console.log(this.$route.path)
     return {
       msg: this.message,
       rts: this.routes,
@@ -55,7 +60,7 @@ export default {
 <style scoped>
 
 .navbar {
-  padding-top: 20px
+  z-index: 5;
 }
 
 #menu {
@@ -66,7 +71,9 @@ export default {
   left: 20px;
   top: 20px;
   /* top: 0px; */
-  width: 0em;
+  /* width: 0em; */
+
+  z-index: 5;
 }
 
 .route {

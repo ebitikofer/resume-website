@@ -1,52 +1,46 @@
 <template>
 
-  <div class="introduction">
-    <div class="card page-body">
+  <div class="introductionPage">
 
-      <p class="text body-text text-positioning" v-anime="introduction.animation">{{ introduction.text }}</p>
-      <h2 class="sub-header text-positioning" v-anime="{ translateY: [-5, 0], opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 450, loop: false }">Contact</h2>
-      <p
-        v-for="(contact, index) in contacts"
-        v-anime="contact.animation"
-        v-bind:key="index"
-      >
-        {{ contact.line }}
-      </p>
+    <!-- <Card :delay="startVal"></Card> -->
 
-    </div>
+    <Card :delay="startVal">
+      <Textblock :text="introduction" :delay="startVal + 50" />
+      <Title title="Contact" :delay="startVal + 100" />
+      <Textblock
+        v-for="(contact, index) in contacts" v-bind:key="index"
+        :text="contact" :delay="startVal + 150 + (50 * index)"
+      />
+    </Card>
+
+    <!-- <Card :delay="startVal"></Card> -->
+
   </div>
 
 </template>
 
 <script>
 
-  import Textsection from '../molecules/Textsection'
+  import Card from '../atoms/Card'
+  import Title from '../atoms/Title'
+  import Textblock from '../atoms/Textblock'
 
   export default {
     name: 'Introduction',
     components: {
-      Textsection
+      Card,
+      Title,
+      Textblock
     },
     data () {
       return {
-        introduction: {
-          text: 'UX/UI programming, human interface design and interaction, art, animation and lots of other programming',
-          animation: { translateY: [-5, 0], opacity: [0.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 500, loop: false }
-        },
+        introduction: 'UX/UI programming, human interface design and interaction, art, animation and lots of other programming',
         contacts: [
-          {
-            line: '440-667-9751 · e.bitikofer@gmail.com',
-            animation: { translateY: [-5, 0], opacity: [0.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 500, loop: false }
-          },
-          {
-            line: ' · linkedin.com/in/ericbitikofer/ · ',
-            animation: { translateY: [-5, 0], opacity: [0.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 550, loop: false }
-          },
-          {
-            line: ' · 99 Main Street, Chauncey OH 45719 · ',
-            animation: { translateY: [-5, 0], opacity: [0.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 600, loop: false }
-          }
-        ]
+          '440-667-9751 · e.bitikofer@gmail.com',
+          ' · linkedin.com/in/ericbitikofer/ · ',
+          ' · 99 Main Street, Chauncey OH 45719 · '
+        ],
+        startVal: 1000
       }
     }
   }
@@ -55,8 +49,8 @@
 
 <style scoped>
 
-.introduction {
-  /* height: 100%; */
-}
+  .introductionPage {
+    /* height: 100%; */
+  }
 
 </style>

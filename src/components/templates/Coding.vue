@@ -1,23 +1,29 @@
 <template>
 
-  <div class="coding">
-    <div class="card page-body">
+  <div class="codingPage">
 
-      <Linkslist title="Languages" :links="lnggs" :delay="450" /><br/>
-      <Linkslist title="Frameworks/Libraries/APIs" :links="lbs" :delay="850" />
+    <!-- <Card :delay="startVal"></Card> -->
 
-    </div>
+    <Card :delay="startVal">
+      <Linkslist title="Languages" :links="lnggs" :delay="startVal + 50" /><br/>
+      <Linkslist title="Frameworks/Libraries/APIs" :links="lbs" :delay="startVal + 350" />
+    </Card>
+
+    <!-- <Card :delay="startVal"></Card> -->
+
   </div>
 
 </template>
 
 <script>
 
+  import Card from '../atoms/Card'
   import Linkslist from '../molecules/Linkslist'
 
   export default {
     name: 'Coding',
     components: {
+      Card,
       Linkslist
     },
     data () {
@@ -39,7 +45,8 @@
           { name: 'Django', link: 'https://www.djangoproject.com/' },
           { name: 'OpenGL', link: 'https://www.khronos.org/opengl/' },
           { name: 'WebGL', link: 'https://www.khronos.org/webgl/' }
-        ]
+        ],
+        startVal: 1000
       }
     }
   }

@@ -108,7 +108,7 @@ ul li {
 }
 
 li {
-  backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); */
 }
 
 ul li span#a{

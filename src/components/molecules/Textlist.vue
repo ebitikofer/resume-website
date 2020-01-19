@@ -1,11 +1,11 @@
 <template>
 
-  <div class="linkslistContainer">
+  <div class="textlistContainer">
 
     <Title :title="ttl" :delay="dly" />
     <ul>
-      <li v-for="(lnk, index) in lnks" :key="lnk.id">
-        <Link :name="lnk.name" :link="lnk.link" :delay="dly + 50 * index" />
+      <li v-for="(txt, index) in txts" :key="index">
+        <Textblock :text="txt" :delay="startVal + 100 + (50 * index)" />
       </li>
     </ul>
 
@@ -16,23 +16,23 @@
 <script>
 
   import Title from '../atoms/Title'
-  import Link from '../atoms/Link'
+  import Textblock from '../atoms/Textblock'
 
   export default {
     name: 'Linkslist',
     components: {
       Title,
-      Link
+      Textblock
     },
     props: {
       title: String,
-      links: Array,
+      texts: Array,
       delay: Number
     },
     data () {
       return {
         ttl: this.title,
-        lnks: this.links,
+        txts: this.texts,
         dly: this.delay
       }
     },

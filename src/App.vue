@@ -1,9 +1,9 @@
 <template>
 
   <div id="app">
-    <Navbar v-bind:message="msg" v-bind:routes="nvs" :delay="0" />
-    <router-view />
-    <Contactbar />
+    <Navbar class="top" v-bind:message="msg" v-bind:routes="nvs" :delay="950" />
+    <router-view class="middle" />
+    <Contactbar class="middle" />
   </div>
 
 </template>
@@ -100,7 +100,7 @@
   li {
     display: inline-block;
     background-color: transparent;
-    backdrop-filter: blur(4px);
+    /* backdrop-filter: blur(4px); */
     color: white;
   }
 
@@ -116,11 +116,18 @@
     height: 100%;
   }
 
+  .top {
+    z-index: 50 !important;
+  }
+
+  .middle {
+    z-index: 0 !important;
+  }
+
   .card {
     background-color: rgba(255,255,255, 0.25); /* Black w/opacity/see-through */
     border-radius: 15px;
     padding: 20px;
-    margin-top: 20px !important;
   }
 
   .page-body {

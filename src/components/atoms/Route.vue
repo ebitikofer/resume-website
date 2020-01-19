@@ -4,7 +4,7 @@
     <router-link :to="rt">
       <div ref="link">
         <!-- <span ref="linktext" @mouseover="mouseOver" @mouseout="mouseOut">{{ nm.charAt(0) }}</span> -->
-        <span class="header route-link letters" ref="linktext" @mouseover="mouseOver" @mouseout="mouseOut">{{ nm }}</span>
+        <span :class="{ 'current-route-link': actv }" class="header route-link letters" ref="linktext" @mouseover="mouseOver" @mouseout="mouseOut">{{ nm }}</span>
       </div>
     </router-link>
   </div>
@@ -18,13 +18,20 @@
     props: {
       name: String,
       route: String,
+      active: Boolean,
       delay: Number
     },
     data () {
       return {
         nm: this.name,
         rt: this.route,
+        actv: this.active,
         dly: this.delay
+      }
+    },
+    watch: {
+      active: function () {
+        this.actv = this.active
       }
     },
     mounted () {

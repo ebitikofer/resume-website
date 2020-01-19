@@ -1,6 +1,6 @@
 <template>
 
-  <div class="textblock">
+  <div class="textblockContainer">
     <p class="text body-text text-positioning">{{ txt }}</p>
   </div>
 

@@ -1,29 +1,29 @@
 <template>
 
-  <div class="demos">
-    <div class="card page-body">
+  <div class="demosPage">
 
-      <Linkslist title="Live" :links="lvs" :delay="400" /><br/>
-      <Linkslist title="Offline" :links="fflns" :delay="650" />
+    <!-- <Card :delay="startVal"></Card> -->
 
-      <!-- <ul v-anime="{ translateY: [-5, 0], opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 450, loop: false }">
-        <li v-anime="{translateY: [-5, 0], opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 650, loop: false }"><Link name="" link="" /></li>
-        <br/><br/>
-        <li v-anime="{translateY: [-5, 0], opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 650, loop: false }"><Link name="" link="https://github.com/ebitikofer" /></li>
-      </ul> -->
+    <Card :delay="startVal">
+      <Linkslist title="Live" :links="lvs" :delay="startVal + 50" /><br/>
+      <Linkslist title="Offline" :links="fflns" :delay="startVal + 200" />
+    </Card>
 
-    </div>
+    <!-- <Card :delay="startVal"></Card> -->
+
   </div>
 
 </template>
 
 <script>
 
+  import Card from '../atoms/Card'
   import Linkslist from '../molecules/Linkslist'
 
   export default {
     name: 'Demos',
     components: {
+      Card,
       Linkslist
     },
     data () {
@@ -36,7 +36,8 @@
         fflns: [
           { name: 'k3b04rd-k!d-ii', link: 'https://github.com/ebitikofer/opengl_primitive_engine' },
           { name: 'github', link: 'https://github.com/ebitikofer' }
-        ]
+        ],
+        startVal: 1000
       }
     }
   }
