@@ -4,7 +4,6 @@
     <div class="card page-body">
 
       <Linkslist title="Live" :links="lvs" :delay="400" /><br/>
-
       <Linkslist title="Offline" :links="fflns" :delay="650" />
 
       <!-- <ul v-anime="{ translateY: [-5, 0], opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 450, loop: false }">

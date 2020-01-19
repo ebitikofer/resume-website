@@ -3,10 +3,8 @@
   <div class="introduction">
     <div class="card page-body">
 
-      <p v-anime="introduction.animation">{{ introduction.text }}</p>
-
-      <h2 v-anime="{ translateY: [-5, 0], opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 450, loop: false }">Contact</h2>
-
+      <p class="text body-text text-positioning" v-anime="introduction.animation">{{ introduction.text }}</p>
+      <h2 class="sub-header text-positioning" v-anime="{ translateY: [-5, 0], opacity: [.1, 1], backgroundColor: '#FFF', duration: 2000, delay: 450, loop: false }">Contact</h2>
       <p
         v-for="(contact, index) in contacts"
         v-anime="contact.animation"
@@ -59,15 +57,6 @@
 
 .introduction {
   /* height: 100%; */
-}
-
-h1, h2 {
-  font-family: LemonMilk;
-  font-weight: bold;
-  color: white;
-  position: relative;
-  left: 25%;
-  width: 50%;
 }
 
 </style>

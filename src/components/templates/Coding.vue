@@ -4,7 +4,6 @@
     <div class="card page-body">
 
       <Linkslist title="Languages" :links="lnggs" :delay="450" /><br/>
-
       <Linkslist title="Frameworks/Libraries/APIs" :links="lbs" :delay="850" />
 
     </div>

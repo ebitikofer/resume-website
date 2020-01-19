@@ -9,183 +9,233 @@
 </template>
 
 <script>
-import Navbar from './components/molecules/Navbar'
-import Contactbar from './components/molecules/Contactbar'
 
-  export default {
-    name: 'App',
-    components: {
-      Navbar,
-      Contactbar
-    },
-    data () {
-      return {
-        // msg: 'Eric\nBitikofer',
-        // msg: titleMsg,
-        msg: '',
-        nvs: [
-          { name: 'INTRODUCTION', link: '/' },
-          { name: 'CODING', link: '/coding' },
-          { name: 'QUALIFICATIONS', link: '/qualifications' },
-          { name: 'DEMOS', link: '/demos' },
-          { name: 'ABOUT', link: '/about' }
-        ]
-      }
-    },
-    watch: {
-      $route (to, from) {
+  import Navbar from './components/molecules/Navbar'
+  import Contactbar from './components/molecules/Contactbar'
+
+    export default {
+      name: 'App',
+      components: {
+        Navbar,
+        Contactbar
+      },
+      data () {
+        let originalMsg = ''
         if (this.$route.name === 'Introduction') {
-          this.msg = 'Eric\nBitikofer'
+          originalMsg = 'Eric\nBitikofer'
         } else {
-          this.msg = this.$route.name
+          originalMsg = this.$route.name
         }
-        console.log('current route', this.msg)
-        this.nvs = [
-          { name: 'INTRODUCTION', link: '/' },
-          { name: 'CODING', link: '/coding' },
-          { name: 'QUALIFICATIONS', link: '/qualifications' },
-          { name: 'DEMOS', link: '/demos' },
-          { name: 'ABOUT', link: '/about' }
-        ]
+        return {
+          // msg: 'Eric\nBitikofer',
+          // msg: titleMsg,
+          msg: originalMsg,
+          nvs: [
+            { name: 'INTRODUCTION', link: '/' },
+            { name: 'CODING', link: '/coding' },
+            { name: 'QUALIFICATIONS', link: '/qualifications' },
+            { name: 'DEMOS', link: '/demos' },
+            { name: 'ABOUT', link: '/about' }
+          ]
+        }
+      },
+      watch: {
+        $route (to, from) {
+          if (this.$route.name === 'Introduction') {
+            this.msg = 'Eric\nBitikofer'
+          } else {
+            this.msg = this.$route.name
+          }
+          console.log('current route', this.msg)
+          this.nvs = [
+            { name: 'INTRODUCTION', link: '/' },
+            { name: 'CODING', link: '/coding' },
+            { name: 'QUALIFICATIONS', link: '/qualifications' },
+            { name: 'DEMOS', link: '/demos' },
+            { name: 'ABOUT', link: '/about' }
+          ]
+        }
       }
     }
-  }
 
 </script>
 
 <style>
 
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
+  ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* make scrollbar transparent */
+  }
 
-body, html {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
+  body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
 
-}
+  body {
+    background: white url("assets/Infant_Stars_in_Orion.png") no-repeat fixed center;
+    background-size: cover;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    /* overflow: scroll; */
+    /* overflow-x: hidden; */
+  }
 
-body {
-  padding: 20px;
-  background: white url("assets/Infant_Stars_in_Orion.png") no-repeat fixed center;
-  background-size: cover;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  /* overflow: scroll; */
-  /* overflow-x: hidden; */
-}
+  div {
+    width: inherit;
+  }
 
-div {
-  width: inherit;
-}
+  ul {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+  }
 
-h1, h2 {
-  background-color: transparent;
-  color: #d2d2d2; /* qualifications */
-  font-weight: bold; /* qualifications */
-}
+  li {
+    display: inline-block;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    color: white;
+  }
 
-p {
-  position: relative;
-  left: 25%;
-  width: 50%;
-  background-color: transparent;
-  font-family: CaviarDreams;
-  color: white;
-  /* color: #d2d2d2; off-white*/
-  /* color: #42b983; green-highlight*/
-}
+  ul li a {
+    text-decoration: none;
+    display: block;
+    background-color: transparent;
+    color: white;
+  }
 
-ul {
-  background-color: transparent;
-  padding: 0px;
-  margin: 0px;
-  list-style-type: none;
-}
+  #app {
+    /* background-color: #2c3e50; */
+    height: 100%;
+  }
 
-li {
-  background-color: transparent;
-  display: inline-block;
-  margin: 0 10px;
-  color: #d2d2d2;
-}
+  .card {
+    background-color: rgba(255,255,255, 0.25); /* Black w/opacity/see-through */
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px !important;
+  }
 
-#app {
-  /* background-color: #2c3e50; */
-  height: 100%;
-}
+  .page-body {
+    position: relative;
+    margin: 0px auto;
+    width: 50vw;
+    height: 100%;
+    text-align: center;
+  }
 
-.card {
-  background-color: rgba(255,255,255, 0.25); /* Black w/opacity/see-through */
-  border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
+  .text {
+    background-color: transparent;
+  }
 
-.page-body {
-  position: relative;
-  left: 25%;
-  width: 50%;
-  height: 100%;
-}
+  .header {
+    font-family: LemonMilk;
+    font-weight: bold;
+    color: white;
+  }
 
-@keyframes textFadeIn {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
+  .sub-header {
+    font-family: 'GlacialIndifference';
+    font-weight: bold;
+    color: white;
+  }
 
-@keyframes textFadeOut {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
+  .accent-text {
+    font-family: CaviarDreams;
+    font-weight: bold;
+    color: white;
+  }
 
-@keyframes textMoveIn {
-  0%   { left: -85%; }
-  100% { left: 0%; }
-}
+  .accent-link {
+    font-family: CaviarDreams;
+    font-weight: bold;
+    color: #42b983;
+  }
 
-@keyframes textMoveOut {
-  0%   { left: 0%; }
-  100% { left: -85%; }
-}
+  .body-text {
+    font-family: CaviarDreams;
+    color: white;
+  }
 
-@font-face {
-  font-family: CaviarDreams;
-  src: url(./assets/CaviarDreams.ttf) format('truetype');
-}
+  .route-link {
+    font-size: 110%;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+  }
 
-@font-face {
-  font-family: CaviarDreams;
-  font-weight: bold;
-  src: url(./assets/CaviarDreams_Bold.ttf) format('truetype');
-}
+  .route-link:hover {
+    color: #76e6b3;
+  }
 
-@font-face {
-  font-family: LemonMilk;
-  src: url(./assets/LemonMilk.otf) format('opentype');
-}
+  .current-route-link {
+    color: #42b983;
+  }
 
-@font-face {
-  font-family: LemonMilk;
-  font-weight: bold;
-  src: url(./assets/LemonMilkbold.otf) format('opentype');
-}
+  .text-positioning {
+    background-color: transparent;
+    position: relative;
+    left: 25%;
+    width: 50%;
+  }
 
-@font-face {
-  font-family: GlacialIndifference;
-  src: url(./assets/GlacialIndifference.otf) format('opentype');
-}
+  @keyframes textFadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
 
-@font-face {
-  font-family: GlacialIndifference;
-  font-weight: bold;
-  src: url(./assets/GlacialIndifference_Bold.otf) format('opentype');
-}
+  @keyframes textFadeOut {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes textMoveIn {
+    0%   { left: -85%; }
+    100% { left: 0%; }
+  }
+
+  @keyframes textMoveOut {
+    0%   { left: 0%; }
+    100% { left: -85%; }
+  }
+
+  @font-face {
+    font-family: CaviarDreams;
+    src: url(./assets/CaviarDreams.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: CaviarDreams;
+    font-weight: bold;
+    src: url(./assets/CaviarDreams_Bold.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: LemonMilk;
+    src: url(./assets/LemonMilk.otf) format('opentype');
+  }
+
+  @font-face {
+    font-family: LemonMilk;
+    font-weight: bold;
+    src: url(./assets/LemonMilkbold.otf) format('opentype');
+  }
+
+  @font-face {
+    font-family: GlacialIndifference;
+    src: url(./assets/GlacialIndifference.otf) format('opentype');
+  }
+
+  @font-face {
+    font-family: GlacialIndifference;
+    font-weight: bold;
+    src: url(./assets/GlacialIndifference_Bold.otf) format('opentype');
+  }
 
 </style>

@@ -9,7 +9,7 @@
     </ul>
 
     <div class="card page-body">
-      <h1 v-anime="{ translateY: [-5, 0], opacity: [.1, 1],  duration: 2000, delay: 300, loop: false }">{{ message }}</h1>
+      <h1 class="header text-positioning" v-anime="{ translateY: [-5, 0], opacity: [.1, 1],  duration: 2000, delay: 300, loop: false }">{{ message }}</h1>
     </div>
 
   </div>
@@ -54,37 +54,24 @@ export default {
 
 <style scoped>
 
-h1, h2 {
-	font-family: 'GlacialIndifference';
-  font-weight: bold;
-  color: white;
-  /* color: #d2d2d2; */
-  position: relative;
-  left: 25%;
-  width: 50%;
+.navbar {
+  padding-top: 20px
 }
 
 #menu {
-  position: fixed;
-  left: 0px;
-  width: 0em;
-  /* margin-top: -2.5em; */
-}
-
-ul {
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
-}
 
-li {
-	display: inline-block;
-	margin-bottom: 20px;
-  background-color: transparent;
-  backdrop-filter: blur(4px);
-	font-family: 'GlacialIndifference';
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  /* top: 0px; */
+  width: 0em;
 }
 
 .route {
+	font-family: 'GlacialIndifference';
+	margin-bottom: 20px;
   /* animation: */
     /* textMoveOut 1s; */
 }

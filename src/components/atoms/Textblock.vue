@@ -1,7 +1,7 @@
 <template>
 
   <div class="textblock">
-    <p>{{ txt }}</p>
+    <p class="text body-text text-positioning">{{ txt }}</p>
   </div>
 
 </template>
@@ -27,7 +27,6 @@
           targets,
           translateY: [-5, 0],
           opacity: [0.1, 1],
-          // backgroundColor: '#FFF',
           duration: 2000,
           delay: this.delay
         })
@@ -37,5 +36,4 @@
 </script>
 
 <style scoped>
-
 </style>

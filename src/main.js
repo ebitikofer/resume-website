@@ -21,34 +21,41 @@ new Vue({
     scrollPosition: 0,
     active: null,
     lastActive: null,
+    activeRoute: null,
+    previousRoute: null,
     lastScrollTop: window.pageYOffset || document.documentElement.scrollTop,
     scrollStarted: false,
     changed: false,
     wait: false,
-    down: true
+    down: true,
+    stopped: true,
+    routes: [
+      '/',
+      '/coding',
+      '/qualifications',
+      '/demos',
+      '/about'
+    ]
   },
   mounted () {
-    this.active = 1
-    this.lastActive = 1
+    this.active = 0
+    this.lastActive = 0
     window.addEventListener('scroll', this.handleScroll)
     document.addEventListener('wheel', this.handleWheel, true)
   },
   methods: {
-    handleWheel (e) {
+    handleWheel (wheelEvent) {
       var threshold = 5
-      var variation = parseInt(e.deltaY)
-      // console.log(e.deltaY);
+      var variation = parseInt(wheelEvent.deltaY)
       console.log(variation)
 
       if (this.wait === false) {
         if (variation < -threshold) {
-          console.log('MouseWheelUp')
           if (this.active > 1) {
             this.active--
             this.changed = true
           }
         } else if (variation > threshold) {
-          console.log('MouseWheelDown')
           if (this.active < 5) {
             this.active++
             this.changed = true
@@ -57,27 +64,18 @@ new Vue({
       }
 
       if (this.changed === true) {
-        console.log(this.active)
-        if (this.active === 1) {
-          this.$router.push('/')
-          console.log('Intro')
-        } else if (this.active === 2) {
-          console.log('Code')
-          this.$router.push('/coding')
-        } else if (this.active === 3) {
-          console.log('Qualifiers')
-          this.$router.push('/qualifications')
-        } else if (this.active === 4) {
-          console.log('Demo')
-          this.$router.push('/demos')
-        } else if (this.active === 5) {
-          console.log('About')
-          this.$router.push('/about')
-          // VueScrollTo.scrollTo('.section-5', 500, options)
+        this.$router.push(this.routes[this.active - 1])
+        // VueScrollTo.scrollTo('.section-5', 500, options)
+
+        if (variation < 20 && variation > -20) {
+          this.stopped = true
+        } else {
+          this.stopped = false
         }
+
         this.changed = false
         this.wait = true
-        setTimeout(this.handleTimeout, 1000)
+        setTimeout(this.handleTimeout, 3000)
       }
     },
     handleTimeout () {
@@ -85,11 +83,13 @@ new Vue({
       // else this.active--
       // this.scrollStarted = false
       // document.body.style.overflow = 'auto'
-      this.wait = false
+      // if (this.stopped) {
+        this.wait = false
+      // }
     },
     handleScroll (e) {
-      console.log('Scrolling')
       let vm = this
+
       let options = {
         container: 'body',
         easing: 'ease-in',
@@ -102,49 +102,39 @@ new Vue({
           if (vm.down) vm.active++
           else vm.active--
           vm.scrollStarted = false
+          console.log('debounce')
           document.body.style.overflow = 'auto'
         }, 100),
         x: false,
         y: true
       }
+
       let st = window.scrollY
+
       if (st > this.lastScrollTop) {
         this.down = true
       } else {
         this.down = false
       }
+
       this.lastScrollTop = st
+
       if (!this.scrollStarted) {
-        this.scrollStarted = true
-        if (this.down) {
-          this.down = true
-          if (this.active === 1) {
-            this.$router.push('/coding')
-          } else if (this.active === 2) {
-            this.$router.push('/qualifications')
-          } else if (this.active === 3) {
-            this.$router.push('/demos')
-          } else if (this.active === 4) {
-            this.$router.push('/about')
-            // VueScrollTo.scrollTo('.section-5', 500, options)
-          }
+        if (this.down && this.stopped) {
+          this.$router.push(this.routes[this.active])
         } else {
-          if (this.active === 2) {
-            this.$router.push('/')
-          } else if (this.active === 3) {
-            this.$router.push('/coding')
-          } else if (this.active === 4) {
-            this.$router.push('/qualifications')
-          } else if (this.active === 5) {
-            this.$router.push('/demos')
-          }
+          this.$router.push(this.routes[this.active - 2])
         }
+
+        this.scrollStarted = true
+        this.down = true
       }
+
       // if (this.down) this.active++
       // else this.active--
       // this.scrollStarted = false
       // document.body.style.overflow = 'auto'
-      setTimeout(this.handleTimeout, 250)
+      // setTimeout(this.handleTimeout, 250)
       console.log(options)
     }
   },
