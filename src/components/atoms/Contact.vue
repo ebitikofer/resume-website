@@ -75,13 +75,6 @@
 
 <style>
 
-.contactbar {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-  /* width: 0; */
-}
-
 span {
   font-family: CaviarDreams;
 }
@@ -91,14 +84,6 @@ img {
   width: 16px;
   position: relative;
   top: 2px;
-}
-
-ul li {
-  white-space: nowrap;
-}
-
-li {
-  /* backdrop-filter: blur(4px); */
 }
 
 ul li span#a{

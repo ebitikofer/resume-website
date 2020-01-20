@@ -87,7 +87,7 @@ export default {
 
 .contactbar {
   position: fixed;
-  left: 20px;
+  /* left: 20px; */
   bottom: 20px;
   /* width: 0; */
 }
@@ -104,7 +104,7 @@ img {
 }
 
 ul li {
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 li {

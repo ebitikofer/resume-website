@@ -2,13 +2,15 @@
 
   <div class="navbar">
 
-    <Card :delay="dly">
+    <!-- <Card :delay="dly"> -->
+    <div class="spacing">
       <ul id="menu">
         <li class="route" v-for="(rt, index) in rts" :key="rt.id">
           <Route :name="rt.name" :route="rt.link" :active="$route.path === rt.link ? true : false" :delay="dly + 50 * index" />
         </li>
       </ul>
-    </Card>
+    </div>
+    <!-- </Card> -->
 
     <Card :delay="dly">
       <h1 class="header text-positioning" v-anime="{ translateY: [-5, 0], opacity: [.1, 1],  duration: 2000, delay: dly, loop: false }">{{ message }}</h1>
@@ -61,6 +63,11 @@ export default {
 
 .navbar {
   z-index: 5;
+}
+
+.spacing {
+  background-color: transparent;
+  padding: 20px;
 }
 
 #menu {
