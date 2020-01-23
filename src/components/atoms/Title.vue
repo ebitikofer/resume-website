@@ -1,7 +1,7 @@
 <template>
 
   <div class="titleContainer">
-    <h2 class="sub-header text-positioning">{{ ttl }}</h2>
+    <h2 class="sub-header text-positioning text-spacing">{{ ttl }}</h2>
   </div>
 
 </template>

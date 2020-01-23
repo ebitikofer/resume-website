@@ -1,7 +1,7 @@
 <template>
 
   <div class="textblockContainer">
-    <p class="text body-text text-positioning">{{ txt }}</p>
+    <p class="text body-text text-positioning text-spacing">{{ txt }}</p>
   </div>
 
 </template>
