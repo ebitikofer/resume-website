@@ -1,7 +1,7 @@
 <template>
 
   <div id="app">
-    <Navbar class="top" v-bind:message="msg" v-bind:routes="nvs" :delay="950" />
+    <Navbar class="top" v-bind:message="msg" v-bind:routes="nvs" :delay="450" />
     <router-view class="middle" />
     <Contactbar class="middle" />
   </div>
@@ -21,19 +21,19 @@
       },
       data () {
         let originalMsg = ''
-        if (this.$route.name === 'Introduction') {
-          originalMsg = 'Eric\nBitikofer'
-        } else {
+        // if (this.$route.name === 'Intro') {
+        //   originalMsg = 'Eric\nBitikofer'
+        // } else {
           originalMsg = this.$route.name
-        }
+        // }
         return {
           // msg: 'Eric\nBitikofer',
           // msg: titleMsg,
           msg: originalMsg,
           nvs: [
-            { name: 'INTRODUCTION', link: '/' },
+            { name: 'INTRO', link: '/' },
             { name: 'CODING', link: '/coding' },
-            { name: 'QUALIFICATIONS', link: '/qualifications' },
+            { name: 'SKILLS', link: '/skills' },
             { name: 'DEMOS', link: '/demos' },
             { name: 'ABOUT', link: '/about' }
           ]
@@ -41,16 +41,16 @@
       },
       watch: {
         $route (to, from) {
-          if (this.$route.name === 'Introduction') {
-            this.msg = 'Eric\nBitikofer'
-          } else {
+          // if (this.$route.name === 'Intro') {
+          //   this.msg = 'Eric\nBitikofer'
+          // } else {
             this.msg = this.$route.name
-          }
-          console.log('current route', this.msg)
+          // }
+          // console.log('current route', this.msg)
           this.nvs = [
-            { name: 'INTRODUCTION', link: '/' },
+            { name: 'INTRO', link: '/' },
             { name: 'CODING', link: '/coding' },
-            { name: 'QUALIFICATIONS', link: '/qualifications' },
+            { name: 'SKILLS', link: '/skills' },
             { name: 'DEMOS', link: '/demos' },
             { name: 'ABOUT', link: '/about' }
           ]
@@ -130,12 +130,45 @@
     padding: 20px;
   }
 
-  .page-body {
+  .center-card {
     position: relative;
     margin: 0px auto;
     width: 50vw;
-    height: 100%;
     text-align: center;
+  }
+
+  .page-body {
+    height: 100%;
+    height: 400px;
+    height: calc(100vh - 140px - 40px - 40px - 45.6px); /* calc(viewport height - 140px - contacts - navbar - header text) */
+    /* height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    height: calc(calc(calc(calc(var(--vh, 1vh) * 100) - 120px) - 90px) - 2em); */
+    overflow-y: auto;
+  }
+
+  .about-page-body {
+    height: 300px;
+    height: 240px;
+    height: calc(100vh - 140px - 40px - 40px - 45.6px - 297px); /* calc(viewport height - 140px - contacts - navbar - header text - shapeshifter) */
+  }
+
+  @media screen and (max-width: 991px) {
+    .page-body {
+      height: 100%;
+      height: 400px;
+      height: calc(100vh - 140px - 40px - 90px - 45.6px); /* calc(viewport height - 140px - contacts - navbar - header text) */
+      /* height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
+      height: calc(calc(calc(calc(var(--vh, 1vh) * 100) - 120px) - 90px) - 2em); */
+      overflow-y: auto;
+    }
+
+    .about-page-body {
+      height: 300px;
+      height: 240px;
+      height: calc(100vh - 140px - 40px - 90px - 45.6px - 150px); /* calc(viewport height - 140px - contacts - navbar - header text - shapeshifter) */
+    }
   }
 
   .text {
@@ -166,6 +199,10 @@
     color: #42b983;
   }
 
+  .accent-link:hover {
+    color: #76e6b3;
+  }
+
   .body-text {
     font-family: CaviarDreams;
     color: white;
@@ -188,8 +225,13 @@
   .text-positioning {
     background-color: transparent;
     position: relative;
-    left: 25%;
-    width: 50%;
+    /* left: 25%; */
+    width: 100%;
+    margin: 0px;
+  }
+
+  .text-spacing {
+    margin-bottom: 20px
   }
 
   @keyframes textFadeIn {

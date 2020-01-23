@@ -5,7 +5,7 @@
     <Title :title="ttl" :delay="dly" />
     <ul>
       <li v-for="(txt, index) in txts" :key="index">
-        <Textblock :text="txt" :delay="startVal + 100 + (50 * index)" />
+        <Textblock :text="txt" :delay="dly + 100 + (50 * index)" />
       </li>
     </ul>
 
@@ -19,7 +19,7 @@
   import Textblock from '../atoms/Textblock'
 
   export default {
-    name: 'Linkslist',
+    name: 'Textlist',
     components: {
       Title,
       Textblock

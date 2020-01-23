@@ -1,6 +1,6 @@
 <template>
 
-  <div class="route">
+  <div class="routeContainer">
     <router-link :to="rt">
       <div ref="link">
         <!-- <span ref="linktext" @mouseover="mouseOver" @mouseout="mouseOut">{{ nm.charAt(0) }}</span> -->
@@ -54,7 +54,7 @@
     },
     methods: {
       mouseOver: function () {
-        console.log('mouseover')
+        // console.log('mouseover')
       //   for (var i = this.nm.length; i > 0 ; i--) {
       //     var span = "<span class='ghost hidden'>" + this.nm.charAt(i) + "</span>";
       //     this.$refs.linktext.insertAdjacentHTML("afterend", span);
@@ -75,7 +75,7 @@
         //   })
       },
       mouseOut: function () {
-        console.log('mouseout')
+        // console.log('mouseout')
       //   for (var j = this.nm.length; j > 0; j--) {
       //     this.$refs.link.lastElementChild.remove();
       //   }

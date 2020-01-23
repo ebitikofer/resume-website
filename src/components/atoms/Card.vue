@@ -2,7 +2,7 @@
 
     <div class="cardContainer">
         <!-- <div class="card page-body" @mouseover="mouseOver" @mouseout="mouseOut"> -->
-        <div class="card page-body">
+        <div class="card center-card" v-bind:class="{ 'page-body': !hdr, 'about-page-body': abt }">
             <slot></slot>
         </div>
     </div>
@@ -14,6 +14,14 @@
     export default {
         name: 'Card',
         props: {
+            header: {
+                default: false,
+                type: Boolean
+            },
+            about: {
+                default: false,
+                type: Boolean
+            },
             delay: Number,
             mountAnimation: Object,
             unmountAnimation: Object,
@@ -22,7 +30,8 @@
         },
         data () {
             return {
-                html: this.$el.innerHTML,
+                hdr: this.header,
+                abt: this.about,
                 dly: this.delay
             }
         },

@@ -12,7 +12,7 @@
     </div>
     <!-- </Card> -->
 
-    <Card :delay="dly">
+    <Card :header="true" :delay="dly">
       <h1 class="header text-positioning" v-anime="{ translateY: [-5, 0], opacity: [.1, 1],  duration: 2000, delay: dly, loop: false }">{{ message }}</h1>
     </Card>
 
@@ -67,7 +67,13 @@ export default {
 
 .spacing {
   background-color: transparent;
-  padding: 20px;
+  padding: 20px 0px;
+}
+
+@media screen and (max-width: 991px) {
+  .spacing {
+    padding: 45px 0px;
+  }
 }
 
 #menu {
@@ -80,7 +86,7 @@ export default {
   /* top: 0px; */
   /* width: 0em; */
 
-  z-index: 5;
+  /* z-index: 5; */
 }
 
 .route {
