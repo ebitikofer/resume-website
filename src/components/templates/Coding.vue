@@ -46,7 +46,7 @@
           { name: 'OpenGL', link: 'https://www.khronos.org/opengl/' },
           { name: 'WebGL', link: 'https://www.khronos.org/webgl/' }
         ],
-        startVal: 1000
+        startVal: 500
       }
     }
   }

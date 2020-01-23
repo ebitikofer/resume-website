@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Introduction from '@/components/templates/Introduction'
+import Intro from '@/components/templates/Intro'
 import Coding from '@/components/templates/Coding'
-import Qualifications from '@/components/templates/Qualifications'
+import Skills from '@/components/templates/Skills'
 import Demos from '@/components/templates/Demos'
 import About from '@/components/templates/About'
 
@@ -12,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Introduction',
-      component: Introduction
+      name: 'Intro',
+      component: Intro
     },
     {
       path: '/coding',
@@ -21,9 +21,9 @@ export default new Router({
       component: Coding
     },
     {
-      path: '/qualifications',
-      name: 'Qualifications',
-      component: Qualifications
+      path: '/skills',
+      name: 'Skills',
+      component: Skills
     },
     {
       path: '/demos',

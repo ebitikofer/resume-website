@@ -37,7 +37,7 @@
           { name: 'k3b04rd-k!d-ii', link: 'https://github.com/ebitikofer/opengl_primitive_engine' },
           { name: 'github', link: 'https://github.com/ebitikofer' }
         ],
-        startVal: 1000
+        startVal: 500
       }
     }
   }

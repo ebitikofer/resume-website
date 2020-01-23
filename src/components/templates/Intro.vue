@@ -1,11 +1,11 @@
 <template>
 
-  <div class="introductionPage">
+  <div class="introPage">
 
     <!-- <Card :delay="startVal"></Card> -->
 
     <Card :delay="startVal">
-      <Textblock :text="introduction" :delay="startVal + 50" />
+      <Textblock :text="intro" :delay="startVal + 50" />
       <Title title="Contact" :delay="startVal + 100" />
       <Textblock
         v-for="(contact, index) in contacts" v-bind:key="index"
@@ -26,7 +26,7 @@
   import Textblock from '../atoms/Textblock'
 
   export default {
-    name: 'Introduction',
+    name: 'Intro',
     components: {
       Card,
       Title,
@@ -34,13 +34,13 @@
     },
     data () {
       return {
-        introduction: 'UX/UI programming, human interface design and interaction, art, animation and lots of other programming',
+        intro: 'UX/UI programming, human interface design and interaction, art, animation and lots of other programming',
         contacts: [
           '440-667-9751 · e.bitikofer@gmail.com',
           ' · linkedin.com/in/ericbitikofer/ · ',
           ' · 99 Main Street, Chauncey OH 45719 · '
         ],
-        startVal: 1000
+        startVal: 500
       }
     }
   }
@@ -49,7 +49,7 @@
 
 <style scoped>
 
-  .introductionPage {
+  .introPage {
     /* height: 100%; */
   }
 
