@@ -62,6 +62,26 @@
 
 <style>
 
+  :root {
+    --main-text: white;
+    --accent-color: #42b983;
+    --accent-color-variant: #76e6b3;
+    --card-padding: 20px;
+    --standard-spacing: 20px;
+
+    --navbar-height: 40px;
+    --navbar-height-mobile: 90px;
+    --header-card-content: 45.6px;
+    --shapeshifter: 297px;
+    --shapeshifter-mobile: 150px;
+
+    --header-height: calc(var(--card-padding) * 2 + var(--header-card-content) + var(--standard-spacing));
+    --body-card: calc(var(--card-padding) * 2 + var(--standard-spacing));
+    --contact-footer: calc(20px + var(--standard-spacing));
+
+    --body-frame: calc(var(--header-height) + var(--body-card) + 20px + var(--contact-footer));
+  }
+
   ::-webkit-scrollbar {
       width: 0px;
       background: transparent; /* make scrollbar transparent */
@@ -101,14 +121,14 @@
     display: inline-block;
     background-color: transparent;
     /* backdrop-filter: blur(4px); */
-    color: white;
+    color: var(--main-text);
   }
 
   ul li a {
     text-decoration: none;
     display: block;
     background-color: transparent;
-    color: white;
+    color: var(--main-text);
   }
 
   #app {
@@ -127,7 +147,7 @@
   .card {
     background-color: rgba(255,255,255, 0.25); /* Black w/opacity/see-through */
     border-radius: 15px;
-    padding: 20px;
+    padding: var(--card-padding);
   }
 
   .center-card {
@@ -138,26 +158,26 @@
   }
 
   .page-body {
-    height: calc(100vh - 140px - 40px - 40px - 45.6px); /* calc(viewport height - 140px - contacts - navbar - header text) */
-    height: calc(calc(var(--vh, 1vh) * 100) - 140px - 40px - 40px - 45.6px); /* calc(viewport height - 140px - contacts - navbar - header text) */
+    height: calc(100vh - var(--body-frame) - var(--navbar-height));
+    height: calc(calc(var(--vh, 1vh) * 100) - var(--body-frame) - var(--navbar-height));
     overflow-y: auto;
   }
 
   .about-page-body {
-    height: calc(100vh - 140px - 40px - 40px - 45.6px - 297px); /* calc(viewport height - 140px - contacts - navbar - header text - shapeshifter) */
-    height: calc(calc(var(--vh, 1vh) * 100) - 140px - 40px - 40px - 45.6px - 297px); /* calc(viewport height - 140px - contacts - navbar - header text - shapeshifter) */
+    height: calc(100vh - var(--body-frame) - var(--navbar-height) - var(--shapeshifter));
+    height: calc(calc(var(--vh, 1vh) * 100) - var(--body-frame) - var(--navbar-height) - var(--shapeshifter));
   }
 
   @media screen and (max-width: 991px) {
     .page-body {
-      height: calc(100vh - 140px - 40px - 90px - 45.6px); /* calc(viewport height - 140px - contacts - navbar - header text) */
-      height: calc(calc(var(--vh, 1vh) * 100) - 140px - 40px - 90px - 45.6px); /* calc(viewport height - 140px - contacts - navbar - header text) */
+      height: calc(100vh - var(--body-frame) - var(--navbar-height-mobile));
+      height: calc(calc(var(--vh, 1vh) * 100) - var(--body-frame) - var(--navbar-height-mobile));
       overflow-y: auto;
     }
 
     .about-page-body {
-      height: calc(100vh - 140px - 40px - 90px - 45.6px - 150px); /* calc(viewport height - 140px - contacts - navbar - header text - shapeshifter) */
-      height: calc(calc(var(--vh, 1vh) * 100) - 140px - 40px - 90px - 45.6px - 150px); /* calc(viewport height - 140px - contacts - navbar - header text - shapeshifter) */
+      height: calc(100vh - var(--body-frame) - var(--navbar-height-mobile) - var(--shapeshifter-mobile));
+      height: calc(calc(var(--vh, 1vh) * 100) - var(--body-frame) - var(--navbar-height-mobile) - var(--shapeshifter-mobile));
     }
   }
 
@@ -168,34 +188,34 @@
   .header {
     font-family: LemonMilk;
     font-weight: bold;
-    color: white;
+    color: var(--main-text);
   }
 
   .sub-header {
     font-family: 'GlacialIndifference';
     font-weight: bold;
-    color: white;
+    color: var(--main-text);
   }
 
   .accent-text {
     font-family: CaviarDreams;
     font-weight: bold;
-    color: white;
+    color: var(--main-text);
   }
 
   .accent-link {
     font-family: CaviarDreams;
     font-weight: bold;
-    color: #42b983;
+    color: var(--accent-color);
   }
 
   .accent-link:hover {
-    color: #76e6b3;
+    color: var(--accent-color-variant);
   }
 
   .body-text {
     font-family: CaviarDreams;
-    color: white;
+    color: var(--main-text);
   }
 
   .route-link {
@@ -205,11 +225,11 @@
   }
 
   .route-link:hover {
-    color: #76e6b3;
+    color: var(--accent-color-variant);
   }
 
   .current-route-link {
-    color: #42b983;
+    color: var(--accent-color);
   }
 
   .text-positioning {
@@ -221,7 +241,7 @@
   }
 
   .text-spacing {
-    margin-bottom: 20px
+    margin-bottom: var(--standard-spacing);
   }
 
   @keyframes textFadeIn {
