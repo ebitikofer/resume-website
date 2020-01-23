@@ -138,36 +138,26 @@
   }
 
   .page-body {
-    height: 100%;
-    height: 400px;
     height: calc(100vh - 140px - 40px - 40px - 45.6px); /* calc(viewport height - 140px - contacts - navbar - header text) */
-    /* height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    height: calc(calc(calc(calc(var(--vh, 1vh) * 100) - 120px) - 90px) - 2em); */
+    height: calc(calc(var(--vh, 1vh) * 100) - 140px - 40px - 40px - 45.6px); /* calc(viewport height - 140px - contacts - navbar - header text) */
     overflow-y: auto;
   }
 
   .about-page-body {
-    height: 300px;
-    height: 240px;
     height: calc(100vh - 140px - 40px - 40px - 45.6px - 297px); /* calc(viewport height - 140px - contacts - navbar - header text - shapeshifter) */
+    height: calc(calc(var(--vh, 1vh) * 100) - 140px - 40px - 40px - 45.6px - 297px); /* calc(viewport height - 140px - contacts - navbar - header text - shapeshifter) */
   }
 
   @media screen and (max-width: 991px) {
     .page-body {
-      height: 100%;
-      height: 400px;
       height: calc(100vh - 140px - 40px - 90px - 45.6px); /* calc(viewport height - 140px - contacts - navbar - header text) */
-      /* height: 100vh;
-      height: calc(var(--vh, 1vh) * 100);
-      height: calc(calc(calc(calc(var(--vh, 1vh) * 100) - 120px) - 90px) - 2em); */
+      height: calc(calc(var(--vh, 1vh) * 100) - 140px - 40px - 90px - 45.6px); /* calc(viewport height - 140px - contacts - navbar - header text) */
       overflow-y: auto;
     }
 
     .about-page-body {
-      height: 300px;
-      height: 240px;
       height: calc(100vh - 140px - 40px - 90px - 45.6px - 150px); /* calc(viewport height - 140px - contacts - navbar - header text - shapeshifter) */
+      height: calc(calc(var(--vh, 1vh) * 100) - 140px - 40px - 90px - 45.6px - 150px); /* calc(viewport height - 140px - contacts - navbar - header text - shapeshifter) */
     }
   }
 
