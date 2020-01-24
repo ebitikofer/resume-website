@@ -64,6 +64,7 @@
     width: 210px;
     height: 297px;
     background-repeat: no-repeat;
+    padding-top: var(--standard-spacing)
   }
 
 @media screen and (max-width: 991px) {
