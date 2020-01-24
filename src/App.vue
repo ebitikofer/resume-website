@@ -62,73 +62,68 @@
 
 <style>
 
-  :root {
-    --main-text: white;
-    --accent-color: #42b983;
-    --accent-color-variant: #76e6b3;
-    --card-padding: 20px;
-    --standard-spacing: 20px;
+  @import './assets/css/variables.css';
+  @import './assets/css/fonts.css';
+  @import './assets/css/animations.css';
 
-    --navbar-height: 40px;
-    --navbar-height-mobile: 90px;
-    --header-card-content: 45.6px;
-    --shapeshifter: 297px;
-    --shapeshifter-mobile: 150px;
+  body, html {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+  }
 
-    --header-height: calc(var(--card-padding) * 2 + var(--header-card-content) + var(--standard-spacing));
-    --body-card: calc(var(--card-padding) * 2 + var(--standard-spacing));
-    --contact-footer: calc(20px + var(--standard-spacing));
+  body {
+      background: white url("./assets/Infant_Stars_in_Orion.png") no-repeat fixed center;
+      background-size: cover;
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      /* color: #2c3e50; */
+      /* overflow: scroll; */
+      /* overflow-x: hidden; */
+  }
 
-    --body-frame: calc(var(--header-height) + var(--body-card) + 20px + var(--contact-footer));
+  div {
+      width: inherit;
+      /* backdrop-filter: blur(4px); */
+  }
+
+  ul {
+      background-color: transparent;
+      /* backdrop-filter: blur(4px); */
+      padding: 0px;
+      margin: 0px;
+      list-style-type: none;
+  }
+
+  li {
+      display: inline-block;
+      background-color: transparent;
+      /* backdrop-filter: blur(4px); */
+  }
+
+  span {
+    font-family: CaviarDreams;
+  }
+
+  img {
+    height: 16px;
+    width: 16px;
+    position: relative;
+    top: 2px;
+  }
+
+  a {
+      background-color: transparent;
+      color: var(--main-text);
+      text-decoration: none;
   }
 
   ::-webkit-scrollbar {
       width: 0px;
       background: transparent; /* make scrollbar transparent */
-  }
-
-  body, html {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-  }
-
-  body {
-    background: white url("assets/Infant_Stars_in_Orion.png") no-repeat fixed center;
-    background-size: cover;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    /* overflow: scroll; */
-    /* overflow-x: hidden; */
-  }
-
-  div {
-    width: inherit;
-  }
-
-  ul {
-    background-color: transparent;
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
-  }
-
-  li {
-    display: inline-block;
-    background-color: transparent;
-    /* backdrop-filter: blur(4px); */
-    color: var(--main-text);
-  }
-
-  ul li a {
-    text-decoration: none;
-    display: block;
-    background-color: transparent;
-    color: var(--main-text);
   }
 
   #app {
@@ -145,7 +140,7 @@
   }
 
   .card {
-    background-color: rgba(255,255,255, 0.25); /* Black w/opacity/see-through */
+    background-color: rgba(255,255,255, 0.25); /* Black w/ opacity  see-through */
     border-radius: 15px;
     padding: var(--card-padding);
   }
@@ -158,26 +153,20 @@
   }
 
   .page-body {
-    height: calc(100vh - var(--body-frame) - var(--navbar-height));
-    height: calc(calc(var(--vh, 1vh) * 100) - var(--body-frame) - var(--navbar-height));
+    height: var(--page-body);
+    height: var(--page-body-custom);
     overflow-y: auto;
   }
 
   .about-page-body {
-    height: calc(100vh - var(--body-frame) - var(--navbar-height) - var(--shapeshifter));
-    height: calc(calc(var(--vh, 1vh) * 100) - var(--body-frame) - var(--navbar-height) - var(--shapeshifter));
+    height: calc( var(--page-body) - var(--shapeshifter) );
+    height: calc( var(--page-body-custom) - var(--shapeshifter) );
   }
 
   @media screen and (max-width: 991px) {
-    .page-body {
-      height: calc(100vh - var(--body-frame) - var(--navbar-height-mobile));
-      height: calc(calc(var(--vh, 1vh) * 100) - var(--body-frame) - var(--navbar-height-mobile));
-      overflow-y: auto;
-    }
-
     .about-page-body {
-      height: calc(100vh - var(--body-frame) - var(--navbar-height-mobile) - var(--shapeshifter-mobile));
-      height: calc(calc(var(--vh, 1vh) * 100) - var(--body-frame) - var(--navbar-height-mobile) - var(--shapeshifter-mobile));
+      height: calc( var(--page-body) - var(--shapeshifter-mobile) );
+      height: calc( var(--page-body-custom) - var(--shapeshifter-mobile) );
     }
   }
 
@@ -222,6 +211,7 @@
     font-size: 110%;
     word-spacing: 2px;
     letter-spacing: 1px;
+    line-height: 0.9;
   }
 
   .route-link:hover {
@@ -242,59 +232,6 @@
 
   .text-spacing {
     margin-bottom: var(--standard-spacing);
-  }
-
-  @keyframes textFadeIn {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-  @keyframes textFadeOut {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-  @keyframes textMoveIn {
-    0%   { left: -85%; }
-    100% { left: 0%; }
-  }
-
-  @keyframes textMoveOut {
-    0%   { left: 0%; }
-    100% { left: -85%; }
-  }
-
-  @font-face {
-    font-family: CaviarDreams;
-    src: url(./assets/CaviarDreams.ttf) format('truetype');
-  }
-
-  @font-face {
-    font-family: CaviarDreams;
-    font-weight: bold;
-    src: url(./assets/CaviarDreams_Bold.ttf) format('truetype');
-  }
-
-  @font-face {
-    font-family: LemonMilk;
-    src: url(./assets/LemonMilk.otf) format('opentype');
-  }
-
-  @font-face {
-    font-family: LemonMilk;
-    font-weight: bold;
-    src: url(./assets/LemonMilkbold.otf) format('opentype');
-  }
-
-  @font-face {
-    font-family: GlacialIndifference;
-    src: url(./assets/GlacialIndifference.otf) format('opentype');
-  }
-
-  @font-face {
-    font-family: GlacialIndifference;
-    font-weight: bold;
-    src: url(./assets/GlacialIndifference_Bold.otf) format('opentype');
   }
 
 </style>
