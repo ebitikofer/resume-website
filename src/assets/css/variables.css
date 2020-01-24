@@ -1,0 +1,23 @@
+:root {
+    --main-text: white;
+    --accent-color: #42b983;
+    --accent-color-variant: #76e6b3;
+    --card-padding: 20px;
+    --standard-spacing: 20px;
+
+    --navbar-height: 40px;
+    --header-card-content: 45.6px;
+
+    --shapeshifter: calc( 297px + var(--standard-spacing) );
+    --shapeshifter-mobile: calc(150px + var(--standard-spacing) );
+
+    --header-height: calc( var(--card-padding) * 2 + var(--header-card-content) + var(--standard-spacing) );
+    --body-card: calc( var(--card-padding) * 2 + var(--standard-spacing) );
+    --contact-footer: calc( 20px + var(--standard-spacing) );
+
+    --body-frame: calc( var(--header-height) + var(--body-card) + 20px + var(--contact-footer) );
+
+    --page-template: calc( var(--body-frame) + var(--navbar-height) );
+    --page-body: calc( 100vh - var(--page-template) );
+    --page-body-custom: calc( calc( var(--vh, 1vh) * 100 ) - var(--page-template) );
+}
