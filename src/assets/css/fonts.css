@@ -1,0 +1,32 @@
+@font-face {
+  font-family: CaviarDreams;
+  src: url(../CaviarDreams.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: CaviarDreams;
+  font-weight: bold;
+  src: url(../CaviarDreams_Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: LemonMilk;
+  src: url(../LemonMilk.otf) format('opentype');
+}
+
+@font-face {
+  font-family: LemonMilk;
+  font-weight: bold;
+  src: url(../LemonMilkbold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: GlacialIndifference;
+  src: url(../GlacialIndifference.otf) format('opentype');
+}
+
+@font-face {
+  font-family: GlacialIndifference;
+  font-weight: bold;
+  src: url(../GlacialIndifference_Bold.otf) format('opentype');
+}
