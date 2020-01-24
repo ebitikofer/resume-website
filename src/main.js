@@ -56,14 +56,97 @@ new Vue({
     })
 
     document.addEventListener('wheel', this.handleWheel, true)
-    document.addEventListener('touchend', function () {
-      // wait = false
-    }, true)
+    document.addEventListener('DOMContentLoaded', this.startup)
+
+    // document.addEventListener('touchend', function () {
+    //   // wait = false
+    // }, true)
   },
   methods: {
+    startup () {
+      document.addEventListener('touchstart', this.handleStart, {passive: true})
+      document.addEventListener('touchend', this.handleEnd, {passive: true})
+      document.addEventListener('touchcancel', this.handleCancel, {passive: true})
+      document.addEventListener('touchmove', this.handleMove, {passive: true})
+    },
+    handleStart (evt) {
+      evt.preventDefault()
+      console.log('touchstart.')
+      // let el = document.getElementById('canvas')
+      // let ctx = el.getContext('2d')
+      // let touches = evt.changedTouches
+      // for (let i = 0; i < touches.length; i++) {
+      //   console.log('touchstart:' + i + '...')
+      //   this.ongoingTouches.push(this.copyTouch(touches[i]))
+      //   let color = this.colorForTouch(touches[i])
+      //   ctx.beginPath()
+      //   ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false) // a circle at the start
+      //   ctx.fillStyle = color
+      //   ctx.fill()
+      //   console.log('touchstart:' + i + '.')
+      // }
+    },
+    handleEnd (evt) {
+      evt.preventDefault()
+      console.log('touchend.')
+      this.log('touchend')
+      // let el = document.getElementById('canvas')
+      // let ctx = el.getContext('2d')
+      // let touches = evt.changedTouches
+      // for (let i = 0; i < touches.length; i++) {
+      //   let color = this.colorForTouch(touches[i])
+      //   let idx = this.ongoingTouchIndexById(touches[i].identifier)
+      //   if (idx >= 0) {
+      //     ctx.lineWidth = 4
+      //     ctx.fillStyle = color
+      //     ctx.beginPath()
+      //     ctx.moveTo(this.ongoingTouches[idx].pageX, this.ongoingTouches[idx].pageY)
+      //     ctx.lineTo(touches[i].pageX, touches[i].pageY)
+      //     ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8) // and a square at the end
+      //     this.ongoingTouches.splice(idx, 1) // remove it; we're done
+      //   } else {
+      //     console.log('cant figure out which touch to end')
+      //   }
+      // }
+    },
+    handleCancel (evt) {
+      evt.preventDefault()
+      console.log('touchcancel.')
+      // let touches = evt.changedTouches
+      // for (let i = 0; i < touches.length; i++) {
+      //   let idx = this.ongoingTouchIndexById(touches[i].identifier)
+      //   this.ongoingTouches.splice(idx, 1) // remove it; we're done
+      // }
+    },
+    handleMove (evt) {
+      evt.preventDefault()
+      console.log('touchmove.')
+      // let el = document.getElementById('canvas')
+      // let ctx = el.getContext('2d')
+      // let touches = evt.changedTouches
+      // for (let i = 0; i < touches.length; i++) {
+      //   let color = this.colorForTouch(touches[i])
+      //   let idx = this.ongoingTouchIndexById(touches[i].identifier)
+      //   if (idx >= 0) {
+      //     console.log('continuing touch ' + idx)
+      //     ctx.beginPath()
+      //     console.log('ctx.moveTo(' + this.ongoingTouches[idx].pageX + ', ' + this.ongoingTouches[idx].pageY + ');')
+      //     ctx.moveTo(this.ongoingTouches[idx].pageX, this.ongoingTouches[idx].pageY)
+      //     console.log('ctx.lineTo(' + touches[i].pageX + ', ' + touches[i].pageY + ');')
+      //     ctx.lineTo(touches[i].pageX, touches[i].pageY)
+      //     ctx.lineWidth = 4
+      //     ctx.strokeStyle = color
+      //     ctx.stroke()
+      //     this.ongoingTouches.splice(idx, 1, this.copyTouch(touches[i])) // swap in the new touch record
+      //     console.log('.')
+      //   } else {
+      //     console.log('cant figure out which touch to continue')
+      //   }
+      // }
+    },
     handleWheel (wheelEvent) {
-      var threshold = 5
-      var variation = parseInt(wheelEvent.deltaY)
+      let threshold = 5
+      let variation = parseInt(wheelEvent.deltaY)
       if (variation > this.maxVariation) {
         this.maxVariation = variation
       }
@@ -172,6 +255,33 @@ new Vue({
       // document.body.style.overflow = 'auto'
       // setTimeout(this.handleTimeout, 250)
       // console.log(options)
+    },
+    colorForTouch (touch) {
+      var r = touch.identifier % 16
+      var g = Math.floor(touch.identifier / 3) % 16
+      var b = Math.floor(touch.identifier / 7) % 16
+      r = r.toString(16) // make it a hex digit
+      g = g.toString(16) // make it a hex digit
+      b = b.toString(16) // make it a hex digit
+      var color = '#' + r + g + b
+      console.log('color for touch with identifier ' + touch.identifier + ' = ' + color)
+      return color
+    },
+    copyTouch ({ identifier, pageX, pageY }) {
+      return { identifier, pageX, pageY }
+    },
+    ongoingTouchIndexById (idToFind) {
+      for (var i = 0; i < this.ongoingTouches.length; i++) {
+        var id = this.ongoingTouches[i].identifier
+        if (id === idToFind) {
+          return i
+        }
+      }
+      return -1 // not found
+    },
+    log (msg) {
+      // var p = document.getElementById('log')
+      // p.innerHTML = msg + '\n' + p.innerHTML
     }
   },
   template: '<App/>'
