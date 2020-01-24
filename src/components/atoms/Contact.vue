@@ -75,43 +75,20 @@
 
 <style>
 
-span {
-  font-family: CaviarDreams;
-}
+    span#b {
+        position: relative;
+        display: none;
+        background-color: transparent;
+        animation:
+            textFadeOut 2s 1s,
+            textMoveOut 1s 1s;
+    }
 
-img {
-  height: 16px;
-  width: 16px;
-  position: relative;
-  top: 2px;
-}
+    li:hover span#b {
+        display: inline;
+        animation:
+            textFadeIn 2s 1s,
+            textMoveIn 1s 1s;
+    }
 
-ul li span#a{
-  position: relative;
-  display: inline;
-  background-color: transparent;
-  /* animation: */
-    /* textMoveOut 1s; */
-}
-
-ul li:hover span#a{
-  /* animation:
-    textMoveIn 1s; */
-}
-
-ul li span#b{
-  position: relative;
-  display: none;
-  background-color: transparent;
-  animation:
-    textFadeOut 2s 1s,
-    textMoveOut 1s 1s;
-}
-
-ul li:hover span#b{
-  display: inline;
-  animation:
-    textFadeIn 2s 1s,
-    textMoveIn 1s 1s;
-}
 </style>

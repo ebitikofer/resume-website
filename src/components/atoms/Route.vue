@@ -4,7 +4,7 @@
     <router-link :to="rt">
       <div ref="link">
         <!-- <span ref="linktext" @mouseover="mouseOver" @mouseout="mouseOut">{{ nm.charAt(0) }}</span> -->
-        <span :class="{ 'current-route-link': actv }" class="header route-link letters" ref="linktext" @mouseover="mouseOver" @mouseout="mouseOut">{{ nm }}</span>
+        <span :class="{ 'current-route-link': actv }" class="header route-link" ref="linktext" @mouseover="mouseOver" @mouseout="mouseOut">{{ nm }}</span>
       </div>
     </router-link>
   </div>
@@ -91,12 +91,6 @@
 </script>
 
 <style>
-
-  .letters {
-    opacity: 1;
-    max-width: 2em;
-    /* transition: all 0.5s ease-in-out; */
-  }
 
   .ghost.hidden {
     opacity: 0;

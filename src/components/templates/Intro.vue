@@ -48,9 +48,4 @@
 </script>
 
 <style scoped>
-
-  .introPage {
-    /* height: 100%; */
-  }
-
 </style>

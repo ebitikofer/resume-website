@@ -85,59 +85,11 @@ export default {
 
 <style scoped>
 
-.contactbar {
-  position: fixed;
-  /* left: 20px; */
-  bottom: 20px;
-  /* width: 0; */
-}
-
-span {
-  font-family: CaviarDreams;
-}
-
-img {
-  height: 16px;
-  width: 16px;
-  position: relative;
-  top: 2px;
-}
-
-ul li {
-  /* white-space: nowrap; */
-}
-
-li {
-  /* backdrop-filter: blur(4px); */
-}
-
-ul li span#a{
-  position: relative;
-  display: inline;
-  background-color: transparent;
-  /* animation: */
-    /* textMoveOut 1s; */
-}
-
-ul li:hover span#a{
-  /* animation:
-    textMoveIn 1s; */
-}
-
-ul li span#b{
-  position: relative;
-  display: none;
-  background-color: transparent;
-  /* animation:
-    textFadeOut 2s,
-    textMoveOut 1s; */
-}
-
-ul li:hover span#b{
-  display: inline;
-  /* animation:
-    textFadeIn 2s,
-    textMoveIn 1s; */
-}
+  .contactbar {
+    position: fixed;
+    /* left: 20px; */
+    bottom: 20px;
+    /* width: 0; */
+  }
 
 </style>

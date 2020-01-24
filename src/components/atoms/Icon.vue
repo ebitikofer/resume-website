@@ -60,17 +60,6 @@
 
 <style>
 
-  span {
-    font-family: CaviarDreams;
-  }
-
-  img {
-    height: 16px;
-    width: 16px;
-    position: relative;
-    top: 2px;
-  }
-
   span#a {
     position: relative;
     display: inline;
@@ -79,7 +68,7 @@
       /* textMoveOut 1s; */
   }
 
-  ul li:hover span#a {
+  li:hover span#a {
     /* animation:
       textMoveIn 1s; */
   }
