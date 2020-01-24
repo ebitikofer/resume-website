@@ -1,0 +1,19 @@
+@keyframes textFadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes textFadeOut {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes textMoveIn {
+    0%   { left: -85%; }
+    100% { left: 0%; }
+}
+
+@keyframes textMoveOut {
+    0%   { left: 0%; }
+    100% { left: -85%; }
+}
