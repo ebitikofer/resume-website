@@ -1,15 +1,13 @@
 <template>
 
-  <div class="navbar">
+  <div class="routeBarContainer">
 
     <!-- <Card :delay="dly"> -->
-    <div class="spacing">
-      <ul id="menu">
-        <li class="route" v-for="(rt, index) in rts" :key="rt.id">
-          <Route :name="rt.name" :route="rt.link" :active="$route.path === rt.link ? true : false" :delay="dly + 50 * index" />
-        </li>
-      </ul>
-    </div>
+    <ul class="routeList">
+      <li class="route" v-for="(rt, index) in rts" :key="rt.id">
+        <Route :name="rt.name" :route="rt.link" :active="$route.path === rt.link ? true : false" :delay="dly + 50 * index" />
+      </li>
+    </ul>
     <!-- </Card> -->
 
     <Card :header="true" :delay="dly">
@@ -65,33 +63,21 @@ export default {
   z-index: 5;
 }
 
-.spacing {
+.routeList {
   background-color: transparent;
-  padding: 20px 0px;
-}
-
-@media screen and (max-width: 991px) {
-  .spacing {
-    padding: 45px 0px;
-  }
-}
-
-#menu {
+  padding-top: 20px;
+  height: 20px;
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
+  vertical-align: middle;
+  /* margin: 0px 30px; */
 
-  position: fixed;
-  left: 20px;
-  top: 20px;
-  /* top: 0px; */
   /* width: 0em; */
-
-  /* z-index: 5; */
 }
 
 .route {
-	font-family: 'GlacialIndifference';
-	margin-bottom: 20px;
+  font-family: 'GlacialIndifference';
+	/* margin-bottom: 20px; */
   /* animation: */
     /* textMoveOut 1s; */
 }
