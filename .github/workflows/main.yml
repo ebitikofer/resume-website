@@ -18,6 +18,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.4.8
       with:
+        BRANCH: master
         FOLDER: ./dist
         COMMIT_MESSAGE: "feat(deploy): deployment"
         GIT_CONFIG_NAME: Eric Bitikofer
