@@ -31,6 +31,7 @@ new Vue({
     stopped: true,
     trigger: false,
     maxVariation: null,
+    touches: [],
     routes: [
       '/',
       '/coding',
@@ -74,17 +75,18 @@ new Vue({
       console.log('touchstart.')
       // let el = document.getElementById('canvas')
       // let ctx = el.getContext('2d')
-      // let touches = evt.changedTouches
-      // for (let i = 0; i < touches.length; i++) {
+      let touches = evt.changedTouches
+      for (let i = 0; i < touches.length; i++) {
       //   console.log('touchstart:' + i + '...')
       //   this.ongoingTouches.push(this.copyTouch(touches[i]))
       //   let color = this.colorForTouch(touches[i])
       //   ctx.beginPath()
       //   ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false) // a circle at the start
+          console.log(touches[i].pageX, touches[i].pageY)
       //   ctx.fillStyle = color
       //   ctx.fill()
       //   console.log('touchstart:' + i + '.')
-      // }
+      }
     },
     handleEnd (evt) {
       evt.preventDefault()
@@ -92,8 +94,8 @@ new Vue({
       this.log('touchend')
       // let el = document.getElementById('canvas')
       // let ctx = el.getContext('2d')
-      // let touches = evt.changedTouches
-      // for (let i = 0; i < touches.length; i++) {
+      let touches = evt.changedTouches
+      for (let i = 0; i < touches.length; i++) {
       //   let color = this.colorForTouch(touches[i])
       //   let idx = this.ongoingTouchIndexById(touches[i].identifier)
       //   if (idx >= 0) {
@@ -102,12 +104,13 @@ new Vue({
       //     ctx.beginPath()
       //     ctx.moveTo(this.ongoingTouches[idx].pageX, this.ongoingTouches[idx].pageY)
       //     ctx.lineTo(touches[i].pageX, touches[i].pageY)
+          console.log(touches[i].pageX, touches[i].pageY)
       //     ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8) // and a square at the end
       //     this.ongoingTouches.splice(idx, 1) // remove it; we're done
       //   } else {
       //     console.log('cant figure out which touch to end')
       //   }
-      // }
+      }
     },
     handleCancel (evt) {
       evt.preventDefault()
@@ -123,8 +126,8 @@ new Vue({
       console.log('touchmove.')
       // let el = document.getElementById('canvas')
       // let ctx = el.getContext('2d')
-      // let touches = evt.changedTouches
-      // for (let i = 0; i < touches.length; i++) {
+      let touches = evt.changedTouches
+      for (let i = 0; i < touches.length; i++) {
       //   let color = this.colorForTouch(touches[i])
       //   let idx = this.ongoingTouchIndexById(touches[i].identifier)
       //   if (idx >= 0) {
@@ -134,6 +137,7 @@ new Vue({
       //     ctx.moveTo(this.ongoingTouches[idx].pageX, this.ongoingTouches[idx].pageY)
       //     console.log('ctx.lineTo(' + touches[i].pageX + ', ' + touches[i].pageY + ');')
       //     ctx.lineTo(touches[i].pageX, touches[i].pageY)
+          console.log(touches[i].pageX, touches[i].pageY)
       //     ctx.lineWidth = 4
       //     ctx.strokeStyle = color
       //     ctx.stroke()
@@ -142,7 +146,7 @@ new Vue({
       //   } else {
       //     console.log('cant figure out which touch to continue')
       //   }
-      // }
+      }
     },
     handleWheel (wheelEvent) {
       let threshold = 5
