@@ -19,7 +19,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@3.4.8
       with:
         BRANCH: master
-        FOLDER: ./dist
+        FOLDER: dist
         COMMIT_MESSAGE: "feat(deploy): deployment"
         GIT_CONFIG_NAME: Eric Bitikofer
         GIT_CONFIG_EMAIL: e.bitikofergmail.com
